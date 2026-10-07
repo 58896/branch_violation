@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mm_violation_type_view_list" model="ir.ui.view">
+        <field name="name">mm.violation.type.list</field>
+        <field name="model">mm.violation.type</field>
+        <field name="arch" type="xml">
+            <list string="Violation Types" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="points"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mm_violation_type_view_search" model="ir.ui.view">
+        <field name="name">mm.violation.type.search</field>
+        <field name="model">mm.violation.type</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="filter_archived" string="Archived" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="mm_violation_type_action" model="ir.actions.act_window">
+        <field name="name">Violation Types</field>
+        <field name="res_model">mm.violation.type</field>
+        <field name="view_mode">list</field>
+    </record>
+</odoo>

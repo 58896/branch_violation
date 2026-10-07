@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_mm_branch_violation_root" name="Branch Violations"
+              web_icon="mm_branch_violation,static/description/icon.png"
+              groups="mm_branch_violation.group_violation_officer" sequence="75"/>
+
+    <menuitem id="menu_mm_branch_violation" name="Violations"
+              parent="menu_mm_branch_violation_root"
+              action="mm_branch_violation_action" sequence="10"/>
+    <menuitem id="menu_mm_branch_violation_to_approve" name="To Approve"
+              parent="menu_mm_branch_violation_root"
+              action="mm_branch_violation_action_to_approve"
+              groups="mm_branch_violation.group_violation_manager" sequence="20"/>
+
+    <menuitem id="menu_mm_branch_violation_complaints" name="Customer Complaints"
+              parent="menu_mm_branch_violation_root"
+              action="mm_branch_violation_action_complaints"
+              groups="mm_branch_violation.group_violation_customer_service" sequence="15"/>
+
+    <menuitem id="menu_mm_branch_violation_reporting" name="Reporting"
+              parent="menu_mm_branch_violation_root" sequence="80"/>
+    <!-- Hidden (developer mode only): violations are deducted through the
+         automatic employee split of the branch commission instead. Kept for
+         months where no commission split is made. -->
+    <menuitem id="menu_mm_violation_deduction_period" name="Monthly Deductions"
+              parent="menu_mm_branch_violation_reporting"
+              action="mm_violation_deduction_period_action"
+              groups="base.group_no_one" sequence="5"/>
+    <menuitem id="menu_mm_performance_scorecard" name="Performance Scorecard"
+              parent="menu_mm_branch_violation_reporting"
+              action="mm_performance_scorecard_action"
+              groups="mm_branch_violation.group_violation_manager" sequence="0"/>
+    <menuitem id="menu_mm_violation_report" name="Violations Report"
+              parent="menu_mm_branch_violation_reporting"
+              action="mm_violation_report_wizard_action" sequence="1"/>
+    <menuitem id="menu_mm_branch_violation_analysis" name="Analysis"
+              parent="menu_mm_branch_violation_reporting"
+              action="mm_branch_violation_action_analysis" sequence="10"/>
+
+    <menuitem id="menu_mm_branch_violation_config" name="Configuration"
+              parent="menu_mm_branch_violation_root"
+              groups="mm_branch_violation.group_violation_manager" sequence="90"/>
+    <menuitem id="menu_mm_violation_type" name="Violation Types"
+              parent="menu_mm_branch_violation_config"
+              action="mm_violation_type_action" sequence="10"/>
+    <menuitem id="menu_mm_violation_source" name="Sources"
+              parent="menu_mm_branch_violation_config"
+              action="mm_violation_source_action" sequence="20"/>
+    <menuitem id="menu_mm_employee_number_import" name="Import Employee Numbers"
+              parent="menu_mm_branch_violation_config"
+              action="mm_employee_number_import_action" sequence="30"/>
+    <menuitem id="menu_mm_violation_settings" name="Settings"
+              parent="menu_mm_branch_violation_config"
+              action="mm_violation_settings_action"
+              groups="base.group_system" sequence="40"/>
+</odoo>

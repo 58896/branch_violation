@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mail_activity_type_customer_response" model="mail.activity.type">
+        <field name="name">Customer Response</field>
+        <field name="summary">Call the customer back</field>
+        <field name="icon">fa-phone</field>
+        <field name="res_model">mm.branch.violation</field>
+        <field name="delay_count">1</field>
+        <field name="sequence">40</field>
+    </record>
+</odoo>

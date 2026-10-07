@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="module_category_branch_violation" model="ir.module.category">
+        <field name="name">Branch Violations</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <!-- Operations + Finance staff: log violations, edit their own drafts, submit. -->
+    <record id="group_violation_officer" model="res.groups">
+        <field name="name">Officer</field>
+        <field name="category_id" ref="module_category_branch_violation"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- Officer + follows customer complaints up: contacts the customer,
+         records the action taken, marks the complaint resolved. Cannot
+         approve or change points. -->
+    <record id="group_violation_customer_service" model="res.groups">
+        <field name="name">Customer Service</field>
+        <field name="category_id" ref="module_category_branch_violation"/>
+        <field name="implied_ids" eval="[(4, ref('group_violation_officer'))]"/>
+    </record>
+
+    <!-- Approves / cancels / resets, edits points, manages configuration. -->
+    <record id="group_violation_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_branch_violation"/>
+        <field name="implied_ids" eval="[(4, ref('group_violation_customer_service'))]"/>
+    </record>
+
+    <data noupdate="1">
+        <record id="rule_violation_company" model="ir.rule">
+            <field name="name">Branch Violation: multi-company</field>
+            <field name="model_id" ref="model_mm_branch_violation"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="rule_deduction_period_company" model="ir.rule">
+            <field name="name">Monthly Violation Deductions: multi-company</field>
+            <field name="model_id" ref="model_mm_violation_deduction_period"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="rule_deduction_line_company" model="ir.rule">
+            <field name="name">Monthly Violation Deduction Lines: multi-company</field>
+            <field name="model_id" ref="model_mm_violation_deduction_line"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record id="rule_violation_officer_read" model="ir.rule">
+            <field name="name">Branch Violation: officer reads all</field>
+            <field name="model_id" ref="model_mm_branch_violation"/>
+            <field name="groups" eval="[(4, ref('group_violation_officer'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="rule_violation_officer_write_own_draft" model="ir.rule">
+            <field name="name">Branch Violation: officer edits own drafts</field>
+            <field name="model_id" ref="model_mm_branch_violation"/>
+            <field name="groups" eval="[(4, ref('group_violation_officer'))]"/>
+            <field name="domain_force">[('create_uid', '=', user.id), ('state', '=', 'draft')]</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <!-- the response fields of any complaint; write() keeps every other
+             field limited to the officer's own drafts -->
+        <record id="rule_violation_customer_service_write" model="ir.rule">
+            <field name="name">Branch Violation: customer service updates responses</field>
+            <field name="model_id" ref="model_mm_branch_violation"/>
+            <field name="groups" eval="[(4, ref('group_violation_customer_service'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="rule_violation_manager_all" model="ir.rule">
+            <field name="name">Branch Violation: manager all</field>
+            <field name="model_id" ref="model_mm_branch_violation"/>
+            <field name="groups" eval="[(4, ref('group_violation_manager'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+    </data>
+</odoo>

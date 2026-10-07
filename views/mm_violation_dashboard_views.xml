@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mm_violation_dashboard_action" model="ir.actions.client">
+        <field name="name">Violations Dashboard</field>
+        <field name="tag">mm_branch_violation.violation_dashboard</field>
+    </record>
+
+    <!-- first entry: managers land on the dashboard when they open the app,
+         officers (no access) still land on Violations -->
+    <menuitem id="menu_mm_violation_dashboard" name="Dashboard"
+              parent="menu_mm_branch_violation_root"
+              action="mm_violation_dashboard_action"
+              groups="mm_branch_violation.group_violation_manager" sequence="1"/>
+</odoo>

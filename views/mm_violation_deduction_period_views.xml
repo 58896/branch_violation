@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mm_violation_deduction_period_view_form" model="ir.ui.view">
+        <field name="name">mm.violation.deduction.period.form</field>
+        <field name="model">mm.violation.deduction.period</field>
+        <field name="arch" type="xml">
+            <form string="Monthly Deductions">
+                <header>
+                    <button name="action_refresh" type="object" string="Refresh"
+                            invisible="state != 'draft' or not id"/>
+                    <button name="action_export_jisr" type="object" string="Export for Jisr"
+                            class="btn-primary" invisible="not id"/>
+                    <button name="action_confirm" type="object" string="Confirm Month"
+                            invisible="state != 'draft' or not id"
+                            groups="mm_branch_violation.group_violation_manager"
+                            confirm="Confirm this month? Its violations become Closed and will not be deducted again."/>
+                    <button name="action_reset_draft" type="object" string="Reset to Draft"
+                            invisible="state != 'confirmed'"
+                            groups="mm_branch_violation.group_violation_manager"
+                            confirm="Reset to Draft? The month's violations go back to Approved."/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="alert alert-warning" role="alert" invisible="not missing_number_count">
+                        <field name="missing_number_count" class="oe_inline"/> employee(s) have no
+                        Employee Number. Jisr cannot match them: fill the number on the employee
+                        or use Configuration → Import Employee Numbers.
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1" placeholder="Month"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="month" readonly="state != 'draft'"/>
+                            <field name="year" readonly="state != 'draft'" options="{'format': false}"/>
+                            <field name="company_id" groups="base.group_multi_company" readonly="state != 'draft'"/>
+                        </group>
+                        <group>
+                            <field name="employee_count" string="Employees"/>
+                            <field name="violation_count" string="Violations"/>
+                            <field name="computed_date"/>
+                            <field name="confirmed_by_id" invisible="state != 'confirmed'"/>
+                            <field name="confirmed_date" invisible="state != 'confirmed'"/>
+                        </group>
+                    </group>
+                    <field name="line_ids" readonly="1">
+                        <list decoration-danger="not employee_number" decoration-warning="has_carried">
+                            <field name="employee_number"/>
+                            <field name="employee_id"/>
+                            <field name="branch_names"/>
+                            <field name="violation_count" string="Violations" sum="Total"/>
+                            <field name="total_points" optional="hide"/>
+                            <field name="deduction_percent"/>
+                            <field name="has_carried" optional="show"/>
+                            <button name="action_view_violations" type="object" icon="fa-list"
+                                    title="View violations"/>
+                        </list>
+                    </field>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="mm_violation_deduction_period_view_list" model="ir.ui.view">
+        <field name="name">mm.violation.deduction.period.list</field>
+        <field name="model">mm.violation.deduction.period</field>
+        <field name="arch" type="xml">
+            <list string="Monthly Deductions">
+                <field name="name"/>
+                <field name="employee_count" string="Employees"/>
+                <field name="violation_count" string="Violations"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="confirmed_date" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'" decoration-success="state == 'confirmed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mm_violation_deduction_period_action" model="ir.actions.act_window">
+        <field name="name">Monthly Deductions</field>
+        <field name="res_model">mm.violation.deduction.period</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Prepare a month's deductions for Jisr</p>
+            <p>Pick a month: every employee with approved violations in it gets one line
+               with the total deduction %. Export it for Jisr, then Confirm the month so
+               those violations are never deducted again.</p>
+        </field>
+    </record>
+</odoo>

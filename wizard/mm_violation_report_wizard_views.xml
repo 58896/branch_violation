@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mm_violation_report_wizard_view_form" model="ir.ui.view">
+        <field name="name">mm.violation.report.wizard.form</field>
+        <field name="model">mm.violation.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Branch Violations Report">
+                <group>
+                    <group string="Period">
+                        <field name="period" widget="radio" options="{'horizontal': false}"/>
+                        <field name="date_from" readonly="period != 'custom'" force_save="1"/>
+                        <field name="date_to" readonly="period != 'custom'" force_save="1"/>
+                    </group>
+                    <group string="Options">
+                        <field name="status_filter" widget="radio"/>
+                        <field name="language" widget="radio" options="{'horizontal': true}"/>
+                        <field name="include_details"/>
+                        <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+                    </group>
+                </group>
+                <group string="Filters (leave empty for all)">
+                    <group>
+                        <field name="branch_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="employee_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="job_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="violation_type_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="source_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="note_type"/>
+                        <field name="entering_department"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_print_pdf" type="object" string="Print PDF"
+                            class="btn-primary" icon="fa-file-pdf-o"/>
+                    <button name="action_export_xlsx" type="object" string="Export Excel"
+                            class="btn-primary" icon="fa-file-excel-o"/>
+                    <button special="cancel" string="Close" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="mm_violation_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Violations Report</field>
+        <field name="res_model">mm.violation.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

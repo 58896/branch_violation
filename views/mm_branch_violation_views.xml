@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mm_branch_violation_view_form" model="ir.ui.view">
+        <field name="name">mm.branch.violation.form</field>
+        <field name="model">mm.branch.violation</field>
+        <field name="arch" type="xml">
+            <form string="Branch Violation">
+                <header>
+                    <button name="action_submit" type="object" string="Submit for Review"
+                            class="btn-primary" invisible="state != 'draft'"
+                            groups="mm_branch_violation.group_violation_officer"/>
+                    <button name="action_approve" type="object" string="Approve"
+                            class="btn-primary" invisible="state != 'under_review'"
+                            groups="mm_branch_violation.group_violation_manager"/>
+                    <button name="action_reset_draft" type="object" string="Reset to New"
+                            invisible="state not in ('under_review', 'cancelled')"
+                            groups="mm_branch_violation.group_violation_manager"/>
+                    <button name="action_open_cancel_wizard" type="object" string="Cancel"
+                            invisible="state in ('closed', 'cancelled')"
+                            groups="mm_branch_violation.group_violation_manager"/>
+                    <button name="action_response_contacted" type="object" string="Customer Contacted"
+                            invisible="response_state != 'pending'"
+                            groups="mm_branch_violation.group_violation_customer_service"/>
+                    <button name="action_response_resolved" type="object" string="Resolved"
+                            invisible="response_state not in ('pending', 'contacted')"
+                            groups="mm_branch_violation.group_violation_customer_service"/>
+                    <button name="action_response_unresolved" type="object" string="Unresolved"
+                            invisible="response_state not in ('pending', 'contacted')"
+                            groups="mm_branch_violation.group_violation_customer_service"/>
+                    <button name="action_response_reopen" type="object" string="Reopen Complaint"
+                            invisible="response_state not in ('resolved', 'unresolved')"
+                            groups="mm_branch_violation.group_violation_customer_service"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,under_review,approved,closed"/>
+                </header>
+                <sheet>
+                    <field name="is_readonly" invisible="1"/>
+                    <field name="can_edit_points" invisible="1"/>
+                    <field name="can_edit_response" invisible="1"/>
+                    <field name="needs_response" invisible="1"/>
+                    <widget name="web_ribbon" title="Carried Forward" bg_color="text-bg-warning"
+                            invisible="not mm_is_carried or state != 'approved'"/>
+                    <widget name="web_ribbon" title="Cancelled" bg_color="text-bg-danger" invisible="state != 'cancelled'"/>
+                    <widget name="web_ribbon" title="Closed" bg_color="text-bg-secondary" invisible="state != 'closed'"/>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                        <div invisible="not needs_response">
+                            <field name="response_state" widget="badge"
+                                   decoration-danger="response_overdue"
+                                   decoration-warning="response_state == 'pending' and not response_overdue"
+                                   decoration-info="response_state == 'contacted'"
+                                   decoration-success="response_state == 'resolved'"
+                                   decoration-muted="response_state == 'unresolved'"/>
+                            <span class="badge text-bg-danger ms-2" invisible="not response_overdue">Overdue</span>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Violation">
+                            <field name="date" readonly="is_readonly"/>
+                            <field name="branch_id" readonly="is_readonly" options="{'no_create': True}"/>
+                            <field name="note_type" readonly="is_readonly"/>
+                            <field name="source_id" readonly="is_readonly" options="{'no_create': True}"/>
+                            <field name="violation_type_id" readonly="is_readonly" options="{'no_create': True}"/>
+                            <field name="points" readonly="not can_edit_points"/>
+                        </group>
+                        <group string="Employee">
+                            <field name="employee_id" readonly="is_readonly" options="{'no_create': True}"/>
+                            <field name="employee_number"/>
+                            <field name="job_id" options="{'no_open': True}"/>
+                            <field name="entering_department" readonly="is_readonly"/>
+                            <field name="company_id" groups="base.group_multi_company" readonly="is_readonly"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description" name="description">
+                            <field name="description" readonly="is_readonly"
+                                   placeholder="What happened? Reason and details of the violation..."/>
+                            <separator string="Notes"/>
+                            <field name="notes" readonly="is_readonly"/>
+                        </page>
+                        <page string="Customer Response" name="customer_response" invisible="not needs_response">
+                            <group>
+                                <group string="Customer">
+                                    <field name="customer_name" readonly="not can_edit_response"/>
+                                    <field name="customer_phone" widget="phone" readonly="not can_edit_response"/>
+                                    <field name="complaint_received_at" readonly="is_readonly"/>
+                                    <field name="response_deadline"/>
+                                    <field name="response_overdue" invisible="1"/>
+                                    <field name="response_user_id" readonly="not can_edit_response"
+                                           options="{'no_create': True}"/>
+                                </group>
+                                <group string="Follow-up">
+                                    <field name="response_contacted_by_id"/>
+                                    <field name="response_contacted_date"/>
+                                    <field name="response_late" invisible="not response_late"/>
+                                    <field name="response_closed_by_id"/>
+                                    <field name="response_closed_date"/>
+                                </group>
+                            </group>
+                            <separator string="Action Taken"/>
+                            <field name="response_action" readonly="not can_edit_response"
+                                   placeholder="What was said or done for the customer (apology, refund, voucher, remake...)"/>
+                        </page>
+                        <page string="Approval" name="approval">
+                            <group>
+                                <group>
+                                    <field name="submitted_by_id"/>
+                                    <field name="submitted_date"/>
+                                </group>
+                                <group>
+                                    <field name="approved_by_id"/>
+                                    <field name="approved_date"/>
+                                </group>
+                            </group>
+                            <group invisible="not cancel_reason">
+                                <field name="cancel_reason"/>
+                            </group>
+                            <group string="Commission Deduction" name="mm_commission">
+                                <group>
+                                    <field name="mm_deduction_status" widget="badge"
+                                           decoration-warning="mm_deduction_status == 'pending'"
+                                           decoration-info="mm_deduction_status == 'counted'"
+                                           decoration-success="mm_deduction_status == 'deducted'"/>
+                                    <field name="mm_commission_line_id" invisible="not mm_commission_line_id"
+                                           groups="pos_sales_target_commission.group_pos_target_user"/>
+                                    <field name="mm_deduction_period_id" invisible="not mm_deduction_period_id"/>
+                                </group>
+                                <group invisible="not mm_is_carried">
+                                    <field name="mm_is_carried"/>
+                                    <field name="mm_carried_from_label"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="mm_branch_violation_view_list" model="ir.ui.view">
+        <field name="name">mm.branch.violation.list</field>
+        <field name="model">mm.branch.violation</field>
+        <field name="arch" type="xml">
+            <list string="Branch Violations" sample="1">
+                <field name="name" decoration-bf="1"/>
+                <field name="date"/>
+                <field name="branch_id"/>
+                <field name="employee_id"/>
+                <field name="employee_number" optional="show"/>
+                <field name="job_id" optional="hide"/>
+                <field name="note_type" optional="show"/>
+                <field name="violation_type_id"/>
+                <field name="source_id" optional="hide"/>
+                <field name="entering_department" optional="hide"/>
+                <field name="points" sum="Total Points"/>
+                <field name="submitted_by_id" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="mm_deduction_status" optional="show" widget="badge"
+                       decoration-warning="mm_deduction_status == 'pending'"
+                       decoration-info="mm_deduction_status == 'counted'"
+                       decoration-success="mm_deduction_status == 'deducted'"/>
+                <field name="mm_carried_from_label" optional="hide"/>
+                <field name="response_overdue" column_invisible="True"/>
+                <field name="response_state" optional="show" widget="badge"
+                       decoration-danger="response_overdue"
+                       decoration-warning="response_state == 'pending' and not response_overdue"
+                       decoration-info="response_state == 'contacted'"
+                       decoration-success="response_state == 'resolved'"
+                       decoration-muted="response_state == 'unresolved'"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'under_review'"
+                       decoration-success="state == 'approved'"
+                       decoration-muted="state in ('closed', 'cancelled')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mm_branch_violation_view_search" model="ir.ui.view">
+        <field name="name">mm.branch.violation.search</field>
+        <field name="model">mm.branch.violation</field>
+        <field name="arch" type="xml">
+            <search string="Branch Violations">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="employee_number"/>
+                <field name="branch_id"/>
+                <field name="violation_type_id"/>
+                <field name="source_id"/>
+                <field name="customer_phone"/>
+                <field name="customer_name"/>
+                <separator/>
+                <filter name="filter_this_month" string="This Month"
+                        domain="[('date', '&gt;=', context_today().strftime('%Y-%m-01')),
+                                 ('date', '&lt;', (context_today() + relativedelta(months=1)).strftime('%Y-%m-01'))]"/>
+                <filter name="filter_last_month" string="Last Month"
+                        domain="[('date', '&gt;=', (context_today() - relativedelta(months=1)).strftime('%Y-%m-01')),
+                                 ('date', '&lt;', context_today().strftime('%Y-%m-01'))]"/>
+                <filter name="filter_date" string="Date" date="date"/>
+                <separator/>
+                <filter name="filter_my_submissions" string="My Submissions"
+                        domain="['|', ('submitted_by_id', '=', uid), '&amp;', ('create_uid', '=', uid), ('state', '=', 'draft')]"/>
+                <filter name="filter_to_approve" string="To Approve" domain="[('state', '=', 'under_review')]"/>
+                <separator/>
+                <filter name="filter_draft" string="New" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_under_review" string="Under Review" domain="[('state', '=', 'under_review')]"/>
+                <filter name="filter_approved" string="Approved" domain="[('state', '=', 'approved')]"/>
+                <filter name="filter_closed" string="Closed" domain="[('state', '=', 'closed')]"/>
+                <filter name="filter_cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]"/>
+                <separator/>
+                <filter name="filter_counted" string="Counted (Approved or Closed)"
+                        domain="[('state', 'in', ('approved', 'closed'))]"/>
+                <separator/>
+                <filter name="filter_pending_deduction" string="Pending Deductions"
+                        domain="[('mm_deduction_status', '=', 'pending')]"
+                        help="Approved, but not counted on any open commission line yet"/>
+                <filter name="filter_in_open_commission" string="In an Open Commission"
+                        domain="[('mm_deduction_status', '=', 'counted')]"/>
+                <filter name="filter_deducted" string="Deducted"
+                        domain="[('mm_deduction_status', '=', 'deducted')]"/>
+                <filter name="filter_carried" string="Carried Forward"
+                        domain="[('mm_is_carried', '=', True)]"/>
+                <separator/>
+                <filter name="filter_complaints" string="Customer Complaints"
+                        domain="[('needs_response', '=', True)]"/>
+                <filter name="filter_response_open" string="Open Complaints"
+                        domain="[('response_state', 'in', ('pending', 'contacted'))]"/>
+                <filter name="filter_response_my" string="Assigned to Me"
+                        domain="[('response_user_id', '=', uid)]"/>
+                <separator/>
+                <filter name="filter_response_pending" string="Awaiting Response"
+                        domain="[('response_state', '=', 'pending')]"/>
+                <filter name="filter_response_overdue" string="Overdue"
+                        domain="[('response_overdue', '=', True)]"/>
+                <filter name="filter_response_contacted" string="Customer Contacted"
+                        domain="[('response_state', '=', 'contacted')]"/>
+                <filter name="filter_response_resolved" string="Resolved"
+                        domain="[('response_state', '=', 'resolved')]"/>
+                <filter name="filter_response_unresolved" string="Unresolved"
+                        domain="[('response_state', '=', 'unresolved')]"/>
+                <filter name="filter_response_late" string="Late Response"
+                        domain="[('response_late', '=', True)]"/>
+                <group expand="0" string="Group By">
+                    <filter name="groupby_branch" string="Branch" context="{'group_by': 'branch_id'}"/>
+                    <filter name="groupby_employee" string="Employee" context="{'group_by': 'employee_id'}"/>
+                    <filter name="groupby_type" string="Violation" context="{'group_by': 'violation_type_id'}"/>
+                    <filter name="groupby_source" string="Source" context="{'group_by': 'source_id'}"/>
+                    <filter name="groupby_state" string="Status" context="{'group_by': 'state'}"/>
+                    <filter name="groupby_deduction_status" string="Deduction" context="{'group_by': 'mm_deduction_status'}"/>
+                    <filter name="groupby_response_state" string="Response Status" context="{'group_by': 'response_state'}"/>
+                    <filter name="groupby_response_user" string="Assigned To" context="{'group_by': 'response_user_id'}"/>
+                    <filter name="groupby_month" string="Month" context="{'group_by': 'date:month'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="mm_branch_violation_view_pivot" model="ir.ui.view">
+        <field name="name">mm.branch.violation.pivot</field>
+        <field name="model">mm.branch.violation</field>
+        <field name="arch" type="xml">
+            <pivot string="Violation Analysis" sample="1">
+                <field name="employee_id" type="row"/>
+                <field name="points" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="mm_branch_violation_view_graph" model="ir.ui.view">
+        <field name="name">mm.branch.violation.graph</field>
+        <field name="model">mm.branch.violation</field>
+        <field name="arch" type="xml">
+            <graph string="Violation Analysis" type="bar" sample="1">
+                <field name="branch_id"/>
+                <field name="points" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="mm_branch_violation_action" model="ir.actions.act_window">
+        <field name="name">Violations</field>
+        <field name="res_model">mm.branch.violation</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+        <field name="search_view_id" ref="mm_branch_violation_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Log the first branch violation</p>
+            <p>Each violation records the branch, the employee, the source and the
+               deduction points. A manager approves it before it counts.</p>
+        </field>
+    </record>
+
+    <record id="mm_branch_violation_action_to_approve" model="ir.actions.act_window">
+        <field name="name">To Approve</field>
+        <field name="res_model">mm.branch.violation</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="mm_branch_violation_view_search"/>
+        <field name="context">{'search_default_filter_to_approve': 1}</field>
+    </record>
+
+    <record id="mm_branch_violation_action_analysis" model="ir.actions.act_window">
+        <field name="name">Violation Analysis</field>
+        <field name="res_model">mm.branch.violation</field>
+        <field name="view_mode">pivot,graph,list</field>
+        <field name="search_view_id" ref="mm_branch_violation_view_search"/>
+        <field name="context">{'search_default_filter_counted': 1, 'search_default_filter_this_month': 1, 'pivot_measures': ['__count', 'points']}</field>
+    </record>
+
+    <record id="mm_branch_violation_view_list_complaints" model="ir.ui.view">
+        <field name="name">mm.branch.violation.list.complaints</field>
+        <field name="model">mm.branch.violation</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <list string="Customer Complaints" decoration-danger="response_overdue">
+                <field name="name" decoration-bf="1"/>
+                <field name="complaint_received_at"/>
+                <field name="branch_id"/>
+                <field name="source_id"/>
+                <field name="customer_name"/>
+                <field name="customer_phone" widget="phone"/>
+                <field name="employee_id" optional="show"/>
+                <field name="violation_type_id" optional="hide"/>
+                <field name="response_user_id" optional="show"/>
+                <field name="response_deadline"/>
+                <field name="response_contacted_date" optional="hide"/>
+                <field name="response_overdue" column_invisible="True"/>
+                <field name="response_late" optional="hide"/>
+                <field name="response_state" widget="badge"
+                       decoration-danger="response_overdue"
+                       decoration-warning="response_state == 'pending' and not response_overdue"
+                       decoration-info="response_state == 'contacted'"
+                       decoration-success="response_state == 'resolved'"
+                       decoration-muted="response_state == 'unresolved'"/>
+                <field name="state" string="Violation Status" optional="show" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'under_review'"
+                       decoration-success="state == 'approved'"
+                       decoration-muted="state in ('closed', 'cancelled')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mm_branch_violation_action_complaints" model="ir.actions.act_window">
+        <field name="name">Customer Complaints</field>
+        <field name="res_model">mm.branch.violation</field>
+        <field name="view_mode">list,form,pivot,graph</field>
+        <field name="domain">[('needs_response', '=', True)]</field>
+        <field name="search_view_id" ref="mm_branch_violation_view_search"/>
+        <field name="context">{'search_default_filter_response_open': 1, 'default_note_type': 'customer_complaint', 'default_entering_department': 'customer_service'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('mm_branch_violation_view_list_complaints')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('mm_branch_violation_view_form')})]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No open customer complaints</p>
+            <p>Complaints from customers (calls, Google, Instagram, WhatsApp...) appear
+               here until Customer Service contacts the customer and closes them.</p>
+        </field>
+    </record>
+</odoo>

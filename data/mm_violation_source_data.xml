@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="violation_source_01" model="mm.violation.source">
+            <field name="name">Field Visit</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="violation_source_02" model="mm.violation.source">
+            <field name="name">Camera Monitoring</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="violation_source_03" model="mm.violation.source">
+            <field name="name">Customer Complaint (Call)</field>
+            <field name="sequence">30</field>
+            <field name="requires_response" eval="True"/>
+        </record>
+        <record id="violation_source_04" model="mm.violation.source">
+            <field name="name">Financial Note</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="violation_source_05" model="mm.violation.source">
+            <field name="name">REMOTELY</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="violation_source_06" model="mm.violation.source">
+            <field name="name">GOOGLE</field>
+            <field name="sequence">60</field>
+            <field name="requires_response" eval="True"/>
+        </record>
+        <record id="violation_source_07" model="mm.violation.source">
+            <field name="name">INSTAGRAM</field>
+            <field name="sequence">70</field>
+            <field name="requires_response" eval="True"/>
+        </record>
+        <record id="violation_source_08" model="mm.violation.source">
+            <field name="name">WHATSAPP</field>
+            <field name="sequence">80</field>
+            <field name="requires_response" eval="True"/>
+        </record>
+        <record id="violation_source_09" model="mm.violation.source">
+            <field name="name">Government Note (Baladi)</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="violation_source_10" model="mm.violation.source">
+            <field name="name">Government Note (Civil Defense)</field>
+            <field name="sequence">100</field>
+        </record>
+    </data>
+</odoo>

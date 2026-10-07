@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="violation_type_01" model="mm.violation.type">
+            <field name="name">Leaving during working hours without permission or excuse</field>
+            <field name="points">10</field>
+            <field name="sequence">10</field>
+        </record>
+        <record id="violation_type_02" model="mm.violation.type">
+            <field name="name">Not following the uniform and general appearance rules</field>
+            <field name="points">5</field>
+            <field name="sequence">20</field>
+        </record>
+        <record id="violation_type_03" model="mm.violation.type">
+            <field name="name">Not following food safety requirements (mask, gloves, branch rules, head cover, shoes)</field>
+            <field name="points">5</field>
+            <field name="sequence">30</field>
+        </record>
+        <record id="violation_type_04" model="mm.violation.type">
+            <field name="name">Mistreating or ignoring a customer</field>
+            <field name="points">10</field>
+            <field name="sequence">40</field>
+        </record>
+        <record id="violation_type_05" model="mm.violation.type">
+            <field name="name">Using a mobile phone or headphones during working hours</field>
+            <field name="points">5</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="violation_type_06" model="mm.violation.type">
+            <field name="name">Not keeping the showroom and work area clean</field>
+            <field name="points">5</field>
+            <field name="sequence">60</field>
+        </record>
+        <record id="violation_type_07" model="mm.violation.type">
+            <field name="name">Poor product arrangement or display, or gaps on shelves and bins</field>
+            <field name="points">5</field>
+            <field name="sequence">70</field>
+        </record>
+        <record id="violation_type_08" model="mm.violation.type">
+            <field name="name">Expired or damaged product on display</field>
+            <field name="points">10</field>
+            <field name="sequence">80</field>
+        </record>
+        <record id="violation_type_09" model="mm.violation.type">
+            <field name="name">Not reporting shortages or out-of-stock items</field>
+            <field name="points">5</field>
+            <field name="sequence">90</field>
+        </record>
+        <record id="violation_type_10" model="mm.violation.type">
+            <field name="name">Not following approved prices and offers</field>
+            <field name="points">5</field>
+            <field name="sequence">100</field>
+        </record>
+        <record id="violation_type_11" model="mm.violation.type">
+            <field name="name">Not completing the required daily tasks on Remotely</field>
+            <field name="points">5</field>
+            <field name="sequence">110</field>
+        </record>
+        <record id="violation_type_12" model="mm.violation.type">
+            <field name="name">Not following the direct supervisor's instructions</field>
+            <field name="points">5</field>
+            <field name="sequence">120</field>
+        </record>
+        <record id="violation_type_13" model="mm.violation.type">
+            <field name="name">Cash differences</field>
+            <field name="points">5</field>
+            <field name="sequence">130</field>
+        </record>
+        <record id="violation_type_14" model="mm.violation.type">
+            <field name="name">Changing the payment method</field>
+            <field name="points">5</field>
+            <field name="sequence">140</field>
+        </record>
+        <record id="violation_type_15" model="mm.violation.type">
+            <field name="name">Not following roasting standards (recommended roasting quantities) and roasting quality</field>
+            <field name="points">10</field>
+            <field name="sequence">150</field>
+        </record>
+        <record id="violation_type_16" model="mm.violation.type">
+            <field name="name">Causing a government violation</field>
+            <field name="points">10</field>
+            <field name="sequence">160</field>
+        </record>
+        <record id="violation_type_17" model="mm.violation.type">
+            <field name="name">Mistakes preparing or checking online orders (delivery apps)</field>
+            <field name="points">5</field>
+            <field name="sequence">170</field>
+        </record>
+        <record id="violation_type_18" model="mm.violation.type">
+            <field name="name">Delay preparing and handing over online orders</field>
+            <field name="points">5</field>
+            <field name="sequence">180</field>
+        </record>
+        <record id="violation_type_19" model="mm.violation.type">
+            <field name="name">Not following correct storage or first-in-first-out product rotation</field>
+            <field name="points">5</field>
+            <field name="sequence">190</field>
+        </record>
+        <record id="violation_type_20" model="mm.violation.type">
+            <field name="name">Not cooperating with the team or leaving tasks to colleagues without reason</field>
+            <field name="points">5</field>
+            <field name="sequence">200</field>
+        </record>
+        <record id="violation_type_21" model="mm.violation.type">
+            <field name="name">Delay receiving goods in the system without reason</field>
+            <field name="points">5</field>
+            <field name="sequence">210</field>
+        </record>
+        <record id="violation_type_22" model="mm.violation.type">
+            <field name="name">Not helping fellow roasters in the showroom during work</field>
+            <field name="points">5</field>
+            <field name="sequence">220</field>
+        </record>
+    </data>
+</odoo>

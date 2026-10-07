@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_mm_violation" model="ir.ui.view">
+        <field name="name">res.config.settings.form.inherit.mm.violation</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="Branch Violations" string="Branch Violations"
+                     name="mm_branch_violation" groups="base.group_system">
+                    <block title="Customer Complaints" name="mm_customer_response_block">
+                        <setting id="mm_response_deadline"
+                                 help="Hours Customer Service has to contact a complaining customer back. A reminder goes to the managers when it is missed. Applies to complaints received after the change.">
+                            <field name="mm_response_deadline_hours"/>
+                            <span class="ms-1">hours</span>
+                        </setting>
+                    </block>
+                    <block title="Performance Scorecard" name="mm_scorecard_block">
+                        <setting id="mm_score_weights"
+                                 help="How the branch score is built. Sales = the branch's sales target achievement (capped at 100%). Mistakes = 100 - violation points per employee (customer complaints included). The two must add up to 100. A branch without a sales target is scored on mistakes only.">
+                            <div class="row">
+                                <label for="mm_score_weight_sales" string="Sales" class="col-4 o_light_label"/>
+                                <field name="mm_score_weight_sales" class="col-2"/>
+                                <span class="col-1">%</span>
+                            </div>
+                            <div class="row">
+                                <label for="mm_score_weight_mistakes" string="Mistakes" class="col-4 o_light_label"/>
+                                <field name="mm_score_weight_mistakes" class="col-2"/>
+                                <span class="col-1">%</span>
+                            </div>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mm_violation_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module': 'mm_branch_violation', 'bin_size': False}</field>
+    </record>
+</odoo>

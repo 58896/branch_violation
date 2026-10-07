@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_commission_plan_view_form_inherit_mm_violation" model="ir.ui.view">
+        <field name="name">pos.commission.plan.form.mm.violation</field>
+        <field name="model">pos.commission.plan</field>
+        <field name="inherit_id" ref="pos_sales_target_commission.pos_commission_plan_view_form"/>
+        <field name="arch" type="xml">
+            <field name="distribution_method" position="after">
+                <field name="mm_auto_split"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Commission result: Jisr export, violation totals, per-line deduction -->
+    <record id="pos_commission_result_view_form_inherit_mm_violation" model="ir.ui.view">
+        <field name="name">pos.commission.result.form.mm.violation</field>
+        <field name="model">pos.commission.result</field>
+        <field name="inherit_id" ref="pos_sales_target_commission.pos_commission_result_view_form"/>
+        <field name="arch" type="xml">
+            <button name="action_cancel_distribution" position="before">
+                <button name="action_mm_refresh_violations" type="object"
+                        string="Refresh Violations"
+                        invisible="employee_distribution_state in ('approved', 'transferred') or not employee_line_ids"/>
+                <button name="action_mm_export_jisr" type="object"
+                        string="Export for Jisr" class="btn-primary"
+                        invisible="employee_distribution_state not in ('approved', 'transferred')"
+                        groups="pos_sales_target_commission.group_pos_target_view_commission"/>
+            </button>
+            <field name="undistributed_difference" position="after">
+                <field name="total_violation_deduction"
+                       groups="pos_sales_target_commission.group_pos_target_view_commission"/>
+                <field name="total_net_commission"
+                       groups="pos_sales_target_commission.group_pos_target_view_commission"/>
+            </field>
+            <xpath expr="//field[@name='employee_line_ids']/list/field[@name='final_commission_amount']" position="after">
+                <field name="deduction_percent" readonly="1" optional="show"
+                       decoration-danger="deduction_percent &gt; 0"/>
+                <field name="deduction_amount" readonly="1" sum="Total Deductions" optional="show"
+                       groups="pos_sales_target_commission.group_pos_target_view_commission"/>
+                <field name="net_commission_amount" readonly="1" sum="Total Net"
+                       groups="pos_sales_target_commission.group_pos_target_view_commission"/>
+                <field name="mm_violation_count" column_invisible="True"/>
+                <field name="mm_violation_note" optional="hide"/>
+                <button name="action_view_mm_violations" type="object" icon="fa-exclamation-triangle"
+                        title="View counted violations" invisible="not mm_violation_count"
+                        groups="mm_branch_violation.group_violation_officer"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="pos_commission_employee_line_view_list_inherit_mm_violation" model="ir.ui.view">
+        <field name="name">pos.commission.employee.line.list.mm.violation</field>
+        <field name="model">pos.commission.employee.line</field>
+        <field name="inherit_id" ref="pos_sales_target_commission.pos_commission_employee_line_view_list"/>
+        <field name="arch" type="xml">
+            <field name="final_commission_amount" position="after">
+                <field name="deduction_percent" optional="show"/>
+                <field name="deduction_amount" sum="Deductions" optional="show"/>
+                <field name="net_commission_amount" sum="Net"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="pos_commission_employee_line_view_form_inherit_mm_violation" model="ir.ui.view">
+        <field name="name">pos.commission.employee.line.form.mm.violation</field>
+        <field name="model">pos.commission.employee.line</field>
+        <field name="inherit_id" ref="pos_sales_target_commission.pos_commission_employee_line_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='calculated_by_id']/../.." position="before">
+                <group string="Violation Deductions" name="mm_violation_deductions">
+                    <group>
+                        <field name="final_commission_amount" string="Gross Commission" readonly="1"/>
+                        <field name="deduction_percent"/>
+                        <field name="deduction_amount"/>
+                        <field name="net_commission_amount"/>
+                        <field name="mm_deduction_locked"/>
+                    </group>
+                    <group>
+                        <field name="mm_violation_count" invisible="1"/>
+                        <button name="action_view_mm_violations" type="object"
+                                string="View Counted Violations" class="btn-link" colspan="2"
+                                icon="fa-exclamation-triangle" invisible="not mm_violation_count"
+                                groups="mm_branch_violation.group_violation_officer"/>
+                        <field name="mm_violation_note" nolabel="1" colspan="2"
+                               invisible="not mm_violation_note"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

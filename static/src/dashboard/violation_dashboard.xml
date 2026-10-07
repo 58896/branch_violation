@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+  <!-- small "open records" arrow used on every card -->
+  <t t-name="mm_branch_violation.VdOpen">
+    <button class="mm-v-open" t-att-title="t('openList')" t-on-click="() => onOpen()">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </button>
+  </t>
+
+  <t t-name="mm_branch_violation.VdDelta">
+    <span t-if="dl" class="mm-v-delta" t-att-class="dl.cls">
+      <t t-esc="dl.arrow"/> <t t-esc="dl.label"/> <small t-esc="t('vsPrev')"/>
+    </span>
+  </t>
+
+  <t t-name="mm_branch_violation.ViolationDashboard">
+    <div class="mm-vd" t-ref="root" t-att-dir="dir" t-att-lang="state.lang">
+
+      <!-- ============ header ============ -->
+      <header class="mm-v-header">
+        <div class="mm-v-brand">
+          <div class="mm-v-logo">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19L12 3z"/><path d="M12 10v4M12 17.5v.01"/></svg>
+          </div>
+          <div>
+            <h1 t-esc="t('title')"/>
+            <div class="mm-v-sub">
+              <t t-esc="t('subtitle')"/>
+              <span t-if="state.updatedAt" class="mm-v-updated">
+                <span class="mm-v-live"/> <t t-esc="t('updated')"/> <t t-esc="updatedLabel"/>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="mm-v-head-actions">
+          <button class="mm-v-btn mm-v-btn-primary" t-on-click="newViolation">+ <t t-esc="t('newViolation')"/></button>
+          <button class="mm-v-btn" t-on-click="openReport"><t t-esc="t('report')"/></button>
+          <button class="mm-v-btn" t-on-click="openScorecard"><t t-esc="t('scorecard')"/></button>
+          <button class="mm-v-icon-btn" t-att-title="t('refresh')" t-on-click="() => this.load()">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg>
+          </button>
+          <button class="mm-v-icon-btn" t-att-title="t('fullscreen')" t-on-click="toggleFullscreen">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+          </button>
+          <button class="mm-v-lang" t-on-click="toggleLang" t-esc="state.lang === 'ar' ? 'English' : 'العربي'"/>
+        </div>
+      </header>
+
+      <!-- ============ toolbar ============ -->
+      <div class="mm-v-toolbar">
+        <!-- period -->
+        <div class="mm-v-pop-wrap">
+          <button class="mm-v-pill" t-att-class="{ 'mm-on': state.periodOpen }" t-on-click="togglePeriod">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            <span t-esc="periodLabel"/>
+            <svg class="mm-v-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <t t-if="state.periodOpen">
+            <div class="mm-v-backdrop" t-on-click="() => this.state.periodOpen = false"/>
+            <div class="mm-v-pop mm-v-period-pop">
+              <div class="mm-v-presets">
+                <t t-foreach="['today', 'last7', 'last30', 'thisMonth', 'lastMonth', 'thisQuarter', 'thisYear']" t-as="p" t-key="p">
+                  <div class="mm-v-preset" t-att-class="{ 'mm-on': state.preset === p }" t-on-click="() => this.setPreset(p)" t-esc="t(p)"/>
+                </t>
+              </div>
+              <div class="mm-v-custom">
+                <div class="mm-v-lbl" t-esc="t('custom')"/>
+                <label><span t-esc="t('from')"/><input type="date" t-model="state.customFrom"/></label>
+                <label><span t-esc="t('to')"/><input type="date" t-model="state.customTo"/></label>
+                <button class="mm-v-btn mm-v-btn-primary" t-on-click="applyCustom" t-esc="t('apply')"/>
+              </div>
+            </div>
+          </t>
+        </div>
+
+        <!-- status -->
+        <div class="mm-v-seg" t-att-title="t('countedHint')">
+          <div t-att-class="{ 'mm-on': statusMode === 'counted' }" t-on-click="() => this.setStatusMode('counted')" t-esc="t('counted')"/>
+          <div t-att-class="{ 'mm-on': statusMode === 'pipeline' }" t-on-click="() => this.setStatusMode('pipeline')" t-esc="t('pipeline')"/>
+          <div t-att-class="{ 'mm-on': statusMode === 'all' }" t-on-click="() => this.setStatusMode('all')" t-esc="t('all')"/>
+        </div>
+
+        <!-- search -->
+        <div class="mm-v-search">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="text" t-att-value="state.searchInput" t-att-placeholder="t('search')"
+                 t-on-input="onSearchInput" t-on-keydown="onSearchKeydown"/>
+          <span t-if="state.searchInput or state.search" class="mm-v-x" t-on-click="clearSearch">×</span>
+        </div>
+
+        <div class="mm-v-toolbar-end">
+          <!-- saved views -->
+          <div class="mm-v-pop-wrap">
+            <button class="mm-v-btn" t-on-click="toggleViews">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v18l-6-4-6 4z"/></svg>
+              <t t-esc="t('savedViews')"/>
+            </button>
+            <t t-if="state.viewsOpen">
+              <div class="mm-v-backdrop" t-on-click="() => this.state.viewsOpen = false"/>
+              <div class="mm-v-pop mm-v-views-pop">
+                <div t-if="!state.views.length" class="mm-v-muted" t-esc="t('noViews')"/>
+                <t t-foreach="state.views" t-as="v" t-key="v.name">
+                  <div class="mm-v-view">
+                    <span class="mm-v-view-name" t-on-click="() => this.applyView(v)" t-esc="v.name"/>
+                    <span class="mm-v-x" t-att-title="t('delete')" t-on-click="() => this.deleteView(v)">×</span>
+                  </div>
+                </t>
+                <div class="mm-v-view-save">
+                  <input type="text" t-att-value="state.viewName" t-att-placeholder="t('viewName')" t-on-input="onViewName"
+                         t-on-keydown="(ev) => ev.key === 'Enter' and this.saveView()"/>
+                  <button class="mm-v-btn mm-v-btn-primary" t-on-click="saveView" t-esc="t('save')"/>
+                </div>
+              </div>
+            </t>
+          </div>
+          <!-- granularity -->
+          <div class="mm-v-seg mm-v-seg-sm">
+            <div t-att-class="{ 'mm-on': !state.granularity }" t-on-click="() => this.setGranularity(null)" t-esc="t('auto')"/>
+            <div t-att-class="{ 'mm-on': state.granularity === 'day' }" t-on-click="() => this.setGranularity('day')" t-esc="t('day')"/>
+            <div t-att-class="{ 'mm-on': state.granularity === 'week' }" t-on-click="() => this.setGranularity('week')" t-esc="t('week')"/>
+            <div t-att-class="{ 'mm-on': state.granularity === 'month' }" t-on-click="() => this.setGranularity('month')" t-esc="t('month')"/>
+          </div>
+          <button class="mm-v-btn mm-v-filter-btn" t-att-class="{ 'mm-on': filterCount }" t-on-click="openDrawer">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>
+            <t t-esc="t('filters')"/>
+            <span t-if="filterCount" class="mm-v-count" t-esc="filterCount"/>
+          </button>
+        </div>
+      </div>
+
+      <!-- active filter chips -->
+      <div t-if="chips.length" class="mm-v-chips">
+        <t t-foreach="chips" t-as="c" t-key="c.id">
+          <span class="mm-v-chip">
+            <small t-if="c.group" t-esc="c.group"/>
+            <t t-esc="c.label"/>
+            <button t-on-click="() => this.removeChip(c)">×</button>
+          </span>
+        </t>
+        <span class="mm-v-clear" t-on-click="clearAll" t-esc="t('clearAll')"/>
+      </div>
+
+      <div t-if="state.loading and !state.data" class="mm-v-loading"><div class="mm-v-spinner"/></div>
+
+      <div t-if="state.data" class="mm-v-body" t-att-class="{ 'mm-v-dim': state.loading }">
+
+        <!-- ============ action center ============ -->
+        <section class="mm-v-actions">
+          <div class="mm-v-actions-head">
+            <span class="mm-v-section-title" t-esc="t('needsAttention')"/>
+            <span t-if="!attentionCount" class="mm-v-allclear">✓ <t t-esc="t('allClear')"/></span>
+          </div>
+          <div class="mm-v-tiles">
+            <t t-foreach="actionTiles" t-as="a" t-key="a.key">
+              <div class="mm-v-tile" t-att-class="'mm-tone-' + (a.value ? a.tone : 'zero')" t-on-click="() => this.openAction(a.key)">
+                <div class="mm-v-tile-val" t-esc="n(a.value)"/>
+                <div class="mm-v-tile-lbl" t-esc="a.label"/>
+                <div t-if="a.sub and a.value" class="mm-v-tile-sub" t-esc="a.sub"/>
+              </div>
+            </t>
+          </div>
+        </section>
+
+        <!-- empty state -->
+        <div t-if="isEmpty" class="mm-v-card mm-v-empty-card">
+          <div class="mm-v-empty-ico">✓</div>
+          <div class="mm-v-empty-title" t-esc="t('noData')"/>
+          <div class="mm-v-muted" t-esc="t('noDataHint')"/>
+          <button t-if="chips.length" class="mm-v-btn" t-on-click="clearAll" t-esc="t('clearAll')"/>
+        </div>
+
+        <t t-if="!isEmpty">
+        <!-- ============ KPIs ============ -->
+        <section class="mm-v-kpis">
+          <div class="mm-v-card mm-v-kpi mm-kpi-accent">
+            <div class="mm-v-kpi-head"><span t-esc="t('kViolations')"/>
+              <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('kViolations'))"/></t>
+            </div>
+            <div class="mm-v-kpi-val" t-esc="n(k.logged)"/>
+            <t t-call="mm_branch_violation.VdDelta"><t t-set="dl" t-value="delta(k.logged, kp.logged)"/></t>
+            <div class="mm-v-kpi-sub" t-esc="t('acrossBranches', n(k.branches))"/>
+            <div class="mm-v-spark" t-ref="sparkV"/>
+          </div>
+          <div class="mm-v-card mm-v-kpi mm-kpi-bad">
+            <div class="mm-v-kpi-head"><span t-esc="t('kPoints')"/></div>
+            <div class="mm-v-kpi-val"><t t-esc="n(k.points, 1)"/><small>%</small></div>
+            <t t-call="mm_branch_violation.VdDelta"><t t-set="dl" t-value="delta(k.points, kp.points)"/></t>
+            <div class="mm-v-kpi-sub" t-esc="t('avgPerViolation', n(k.avg_points, 1))"/>
+            <div class="mm-v-spark" t-ref="sparkP"/>
+          </div>
+          <div class="mm-v-card mm-v-kpi mm-kpi-warn">
+            <div class="mm-v-kpi-head"><span t-esc="t('kEmployees')"/></div>
+            <div class="mm-v-kpi-val" t-esc="n(k.employees)"/>
+            <t t-call="mm_branch_violation.VdDelta"><t t-set="dl" t-value="delta(k.employees, kp.employees)"/></t>
+            <div class="mm-v-kpi-sub mm-v-link" t-on-click="toggleRepeat">
+              <t t-esc="t('repeatOffenders', n(k.repeat))"/>
+              <t t-if="k.repeat_pct !== null"> · <t t-esc="n(k.repeat_pct)"/>%</t>
+            </div>
+            <div class="mm-v-ring-row">
+              <t t-set="rp" t-value="k.repeat_pct || 0"/>
+              <div class="mm-v-meter"><div t-att-style="'width:' + rp + '%'"/></div>
+            </div>
+          </div>
+          <div class="mm-v-card mm-v-kpi mm-kpi-orange">
+            <div class="mm-v-kpi-head"><span t-esc="t('kComplaints')"/>
+              <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([['needs_response', '=', true]], t('kComplaints'))"/></t>
+            </div>
+            <div class="mm-v-kpi-val" t-esc="n(k.complaints)"/>
+            <t t-call="mm_branch_violation.VdDelta"><t t-set="dl" t-value="delta(k.complaints, kp.complaints)"/></t>
+            <div class="mm-v-kpi-sub" t-att-class="{ 'mm-v-bad-txt': k.overdue }" t-esc="t('overdue', n(k.overdue))"/>
+            <div class="mm-v-spark" t-ref="sparkC"/>
+          </div>
+          <div class="mm-v-card mm-v-kpi mm-kpi-good">
+            <div class="mm-v-kpi-head"><span t-esc="t('kHandling')"/></div>
+            <div class="mm-v-gauge" t-ref="gauge"/>
+            <div class="mm-v-kpi-sub mm-v-center">
+              <t t-if="k.avg_contact_hours !== null" t-esc="t('avgContact', n(k.avg_contact_hours, 1))"/>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ insights + pipeline ============ -->
+        <section class="mm-v-grid mm-v-grid-3-2">
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head"><span class="mm-v-card-title">✦ <t t-esc="t('insights')"/></span></div>
+            <div t-if="!insights.length" class="mm-v-muted mm-v-pad-sm" t-esc="t('noInsights')"/>
+            <ul class="mm-v-insights">
+              <t t-foreach="insights" t-as="i" t-key="i_index">
+                <li t-att-class="['mm-ins-' + i.tone, i.click ? 'mm-v-clickable' : ''].join(' ')" t-on-click="() => i.click and i.click()">
+                  <span class="mm-ins-ico" t-esc="i.icon"/>
+                  <span t-esc="i.text"/>
+                </li>
+              </t>
+            </ul>
+          </div>
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head">
+              <span class="mm-v-card-title" t-esc="t('funnel')"/>
+              <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('funnel'), 'domain_funnel')"/></t>
+            </div>
+            <div class="mm-v-funnel">
+              <t t-foreach="funnel" t-as="s" t-key="s.key">
+                <div class="mm-v-fstep" t-att-class="{ 'mm-on': s.active }" t-on-click="() => this.setStates([s.key])">
+                  <span class="mm-v-flabel" t-esc="s.label"/>
+                  <div class="mm-v-fbar"><div t-att-class="'mm-f-' + s.key" t-att-style="'width:' + Math.max(s.pct, s.value ? 4 : 0) + '%'"/></div>
+                  <span class="mm-v-fval" t-esc="n(s.value)"/>
+                </div>
+              </t>
+            </div>
+            <div t-if="k.avg_approve_hours !== null" class="mm-v-muted mm-v-small" t-esc="t('avgApprove', n(k.avg_approve_hours, 1))"/>
+          </div>
+        </section>
+
+        <!-- ============ trend ============ -->
+        <section class="mm-v-card mm-v-pad mm-v-mb">
+          <div class="mm-v-card-head">
+            <span class="mm-v-card-title" t-esc="t('trend')"/>
+            <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('trend'))"/></t>
+          </div>
+          <div t-ref="trend" class="mm-v-chart-lg"/>
+        </section>
+
+        <!-- ============ heatmap ============ -->
+        <section t-if="heat.rows.length" class="mm-v-card mm-v-pad mm-v-mb">
+          <div class="mm-v-card-head">
+            <span class="mm-v-card-title" t-esc="t('heatmap')"/>
+            <span class="mm-v-muted mm-v-small" t-esc="t('heatHint')"/>
+          </div>
+          <div class="mm-v-heat-wrap">
+            <table class="mm-v-heat">
+              <thead><tr>
+                <th class="mm-v-heat-corner" t-esc="t('branch')"/>
+                <t t-foreach="heat.cols" t-as="c" t-key="c.id">
+                  <th t-att-title="c.name"><span t-esc="c.name"/></th>
+                </t>
+                <th class="mm-v-heat-total" t-esc="t('total')"/>
+              </tr></thead>
+              <tbody>
+                <t t-foreach="heat.rows" t-as="r" t-key="r.id">
+                  <tr>
+                    <td class="mm-v-heat-name" t-on-click="() => this.toggleFilter('branch_ids', r.id)" t-esc="r.name"/>
+                    <t t-foreach="r.cells" t-as="cell" t-key="cell_index">
+                      <td class="mm-v-heat-cell" t-att-style="cell.style" t-att-class="{ 'mm-zero': !cell.v }"
+                          t-on-click="() => cell.v and this.filterCell(r.id, cell.typeId)" t-esc="cell.v or '·'"/>
+                    </t>
+                    <td class="mm-v-heat-total" t-esc="r.total"/>
+                  </tr>
+                </t>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ branches + breakdown ============ -->
+        <section class="mm-v-grid mm-v-grid-3-2">
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head">
+              <span class="mm-v-card-title" t-esc="t('byBranch')"/>
+              <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('byBranch'))"/></t>
+            </div>
+            <div t-ref="branch"/>
+          </div>
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head">
+              <span class="mm-v-card-title" t-esc="t('breakdown')"/>
+              <div class="mm-v-seg mm-v-seg-xs">
+                <t t-foreach="['note_types', 'departments', 'sources', 'jobs']" t-as="b" t-key="b">
+                  <div t-att-class="{ 'mm-on': state.breakdown === b }" t-on-click="() => this.setBreakdown(b)" t-esc="L.bk[b]"/>
+                </t>
+              </div>
+            </div>
+            <div t-ref="breakdown"/>
+          </div>
+        </section>
+
+        <!-- ============ pareto + weekday ============ -->
+        <section class="mm-v-grid mm-v-grid-3-2">
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head"><span class="mm-v-card-title" t-esc="t('pareto')"/></div>
+            <div t-ref="pareto"/>
+          </div>
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head"><span class="mm-v-card-title" t-esc="t('weekday')"/></div>
+            <div t-ref="weekday"/>
+          </div>
+        </section>
+
+        <!-- ============ employees to watch ============ -->
+        <section class="mm-v-card mm-v-pad mm-v-mb">
+          <div class="mm-v-card-head">
+            <span class="mm-v-card-title" t-esc="t('offenders')"/>
+            <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('offenders'))"/></t>
+          </div>
+          <div class="mm-v-table-wrap">
+            <table class="mm-v-table">
+              <thead><tr>
+                <th>#</th><th t-esc="t('employee')"/><th t-esc="t('branch')"/>
+                <th class="mm-num" t-esc="t('count')"/><th class="mm-num" t-esc="t('points')"/>
+                <th t-esc="t('topType')"/><th t-esc="t('lastSeen')"/><th class="mm-num" t-esc="t('change')"/><th/>
+              </tr></thead>
+              <tbody>
+                <t t-foreach="employees" t-as="e" t-key="e.id">
+                  <tr t-att-class="{ 'mm-v-row-on': isActive('employee_ids', e.id) }">
+                    <td><span class="mm-v-rank" t-att-class="{ 'mm-top': e.rank &lt;= 3 }" t-esc="e.rank"/></td>
+                    <td class="mm-v-emp" t-on-click="() => this.toggleFilter('employee_ids', e.id)">
+                      <div class="mm-v-avatar" t-esc="(e.name or '?').trim().charAt(0)"/>
+                      <div>
+                        <div class="mm-v-emp-name" t-esc="e.name"/>
+                        <div class="mm-v-muted mm-v-small"><t t-esc="e.number"/><t t-if="e.number and e.job"> · </t><t t-esc="e.job"/></div>
+                      </div>
+                    </td>
+                    <td class="mm-v-muted" t-esc="e.branch"/>
+                    <td class="mm-num">
+                      <div class="mm-v-cellbar"><div t-att-style="'width:' + e.bar + '%'"/></div>
+                      <b t-esc="n(e.count)"/>
+                    </td>
+                    <td class="mm-num" t-esc="n(e.points, 1)"/>
+                    <td>
+                      <span class="mm-v-type" t-esc="e.top_type"/>
+                      <span t-if="e.same_type_repeat" class="mm-v-badge-bad" t-esc="t('repeated', e.same_type_repeat)"/>
+                    </td>
+                    <td class="mm-v-muted" t-esc="daysAgo(e.days_since)"/>
+                    <td class="mm-num"><span t-if="e.delta" t-att-class="e.delta.cls" t-esc="e.delta.label"/></td>
+                    <td><t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([['employee_id', '=', e.id]], e.name)"/></t></td>
+                  </tr>
+                </t>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============ complaints ============ -->
+        <section t-if="k.complaints" class="mm-v-grid mm-v-grid-complaints">
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head">
+              <span class="mm-v-card-title" t-esc="t('complaintsPanel')"/>
+              <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([['needs_response', '=', true]], t('complaintsPanel'))"/></t>
+            </div>
+            <div t-ref="response"/>
+          </div>
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head"><span class="mm-v-card-title" t-esc="t('byRep')"/></div>
+            <div class="mm-v-table-wrap">
+              <table class="mm-v-table mm-v-table-sm">
+                <thead><tr>
+                  <th t-esc="t('rep')"/><th class="mm-num" t-esc="t('complaintsCol')"/>
+                  <th t-esc="t('onTime')"/><th class="mm-num" t-esc="t('avgHours')"/>
+                </tr></thead>
+                <tbody>
+                  <t t-foreach="reps" t-as="r" t-key="r.user_id">
+                    <tr>
+                      <td class="mm-v-emp-name" t-esc="r.name or t('unassigned')"/>
+                      <td class="mm-num" t-esc="n(r.complaints)"/>
+                      <td>
+                        <t t-if="r.on_time_pct !== null">
+                          <div class="mm-v-meter mm-v-meter-sm" t-att-class="r.on_time_pct >= 80 ? 'mm-good' : r.on_time_pct >= 50 ? 'mm-warn' : 'mm-bad'">
+                            <div t-att-style="'width:' + r.on_time_pct + '%'"/>
+                          </div>
+                          <small t-esc="r.on_time_pct + '%'"/>
+                        </t>
+                        <span t-else="" class="mm-v-muted">—</span>
+                      </td>
+                      <td class="mm-num" t-esc="r.avg_hours !== null ? n(r.avg_hours, 1) : '—'"/>
+                    </tr>
+                  </t>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="mm-v-card mm-v-pad">
+            <div class="mm-v-card-head"><span class="mm-v-card-title mm-v-bad-txt">⏰ <t t-esc="t('overdueList')"/></span></div>
+            <div t-if="!overdueList.length" class="mm-v-allclear mm-v-pad-sm">✓ <t t-esc="t('allClear')"/></div>
+            <t t-foreach="overdueList" t-as="o" t-key="o.id">
+              <div class="mm-v-overdue" t-on-click="() => this.openRecord(o.id)">
+                <div>
+                  <div class="mm-v-emp-name"><t t-esc="o.customer or o.name"/></div>
+                  <div class="mm-v-muted mm-v-small"><t t-esc="o.phone"/><t t-if="o.phone"> · </t><t t-esc="o.branch"/></div>
+                </div>
+                <span class="mm-v-badge-bad" t-esc="t('hoursLate', n(o.hours_late))"/>
+              </div>
+            </t>
+          </div>
+        </section>
+
+        <!-- ============ latest ============ -->
+        <section class="mm-v-card mm-v-pad mm-v-mb">
+          <div class="mm-v-card-head">
+            <span class="mm-v-card-title" t-esc="t('recent')"/>
+            <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('recent'))"/></t>
+          </div>
+          <div class="mm-v-table-wrap">
+            <table class="mm-v-table mm-v-table-sm">
+              <thead><tr>
+                <th t-esc="t('ref')"/><th t-esc="t('date')"/><th t-esc="t('branch')"/><th t-esc="t('employee')"/>
+                <th t-esc="t('type')"/><th class="mm-num" t-esc="t('points')"/><th t-esc="t('status')"/>
+              </tr></thead>
+              <tbody>
+                <t t-foreach="data.recent" t-as="r" t-key="r.id">
+                  <tr class="mm-v-clickable" t-on-click="() => this.openRecord(r.id)">
+                    <td class="mm-v-ref" t-esc="r.name"/>
+                    <td t-esc="fmtDate(r.date)"/>
+                    <td class="mm-v-muted" t-esc="r.branch"/>
+                    <td class="mm-v-emp-name" t-esc="r.employee"/>
+                    <td>
+                      <span class="mm-v-dot" t-att-class="'mm-nt-' + r.note_type"/>
+                      <t t-esc="r.type"/>
+                    </td>
+                    <td class="mm-num" t-esc="n(r.points, 1)"/>
+                    <td>
+                      <span class="mm-v-state" t-att-class="'mm-st-' + r.state" t-esc="stLabel(r.state)"/>
+                      <span t-if="r.response_state" class="mm-v-state" t-att-class="'mm-rs-' + r.response_state" t-esc="rsLabel(r.response_state)"/>
+                    </td>
+                  </tr>
+                </t>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        </t>
+      </div>
+
+      <!-- ============ filter drawer ============ -->
+      <t t-if="state.drawerOpen">
+        <div class="mm-v-drawer-backdrop" t-on-click="closeDrawer"/>
+        <aside class="mm-v-drawer">
+          <div class="mm-v-drawer-head">
+            <span class="mm-v-card-title"><t t-esc="t('filters')"/> <span t-if="draftCount" class="mm-v-count" t-esc="draftCount"/></span>
+            <button class="mm-v-icon-btn" t-on-click="closeDrawer">×</button>
+          </div>
+          <div class="mm-v-drawer-body">
+
+            <div class="mm-v-fgroup">
+              <div class="mm-v-toggle-row" t-on-click="() => this.draftBool('complaints_only')">
+                <span class="mm-v-switch" t-att-class="{ 'mm-on': state.draft.complaints_only }"/>
+                <span t-esc="t('complaintsOnly')"/>
+              </div>
+              <div class="mm-v-toggle-row" t-on-click="() => this.draftBool('repeat_only')">
+                <span class="mm-v-switch" t-att-class="{ 'mm-on': state.draft.repeat_only }"/>
+                <span><t t-esc="t('repeatOnly')"/><br/><small class="mm-v-muted" t-esc="t('repeatOnlyHint')"/></span>
+              </div>
+            </div>
+
+            <div class="mm-v-fgroup">
+              <div class="mm-v-flabel-h" t-esc="t('states')"/>
+              <div class="mm-v-pills">
+                <t t-foreach="['draft', 'under_review', 'approved', 'closed', 'cancelled']" t-as="s" t-key="s">
+                  <span class="mm-v-opt" t-att-class="{ 'mm-on': state.draftStates.includes(s) }" t-on-click="() => this.draftStateToggle(s)" t-esc="stLabel(s)"/>
+                </t>
+              </div>
+            </div>
+
+            <div class="mm-v-fgroup">
+              <div class="mm-v-flabel-h" t-esc="t('noteTypes')"/>
+              <div class="mm-v-pills">
+                <t t-foreach="['operational', 'financial', 'customer_complaint', 'government']" t-as="s" t-key="s">
+                  <span class="mm-v-opt" t-att-class="{ 'mm-on': draftHas('note_types', s) }" t-on-click="() => this.draftToggle('note_types', s)">
+                    <span class="mm-v-dot" t-att-class="'mm-nt-' + s"/><t t-esc="ntLabel(s)"/>
+                  </span>
+                </t>
+              </div>
+            </div>
+
+            <div class="mm-v-fgroup">
+              <div class="mm-v-flabel-h" t-esc="t('departments')"/>
+              <div class="mm-v-pills">
+                <t t-foreach="['operations', 'finance', 'customer_service']" t-as="s" t-key="s">
+                  <span class="mm-v-opt" t-att-class="{ 'mm-on': draftHas('departments', s) }" t-on-click="() => this.draftToggle('departments', s)" t-esc="dpLabel(s)"/>
+                </t>
+              </div>
+            </div>
+
+            <div class="mm-v-fgroup">
+              <div class="mm-v-flabel-h" t-esc="t('responseStates')"/>
+              <div class="mm-v-pills">
+                <t t-foreach="['pending', 'contacted', 'resolved', 'unresolved']" t-as="s" t-key="s">
+                  <span class="mm-v-opt" t-att-class="{ 'mm-on': draftHas('response_states', s) }" t-on-click="() => this.draftToggle('response_states', s)" t-esc="rsLabel(s)"/>
+                </t>
+              </div>
+            </div>
+
+            <t t-foreach="[['branches', 'branch_ids'], ['employees', 'employee_ids'], ['types', 'type_ids'], ['sources', 'source_ids'], ['jobs', 'job_ids']]" t-as="g" t-key="g[0]">
+              <div class="mm-v-fgroup">
+                <div class="mm-v-flabel-h">
+                  <t t-esc="t(g[0])"/>
+                  <span t-if="state.draft[g[1]].length" class="mm-v-muted mm-v-small"> · <t t-esc="state.draft[g[1]].length"/> <t t-esc="t('selected')"/></span>
+                </div>
+                <input t-if="(opts[g[0]] or []).length > 6" class="mm-v-finput" type="text" t-att-placeholder="t('typeToSearch')"
+                       t-att-value="state.drawerQ[g[0]]" t-on-input="(ev) => this.onDrawerQ(g[0], ev)"/>
+                <div class="mm-v-checklist">
+                  <t t-foreach="drawerList(g[0])" t-as="o" t-key="o.id">
+                    <label class="mm-v-check" t-att-class="{ 'mm-on': draftHas(g[1], o.id) }">
+                      <input type="checkbox" t-att-checked="draftHas(g[1], o.id)" t-on-change="() => this.draftToggle(g[1], o.id)"/>
+                      <span class="mm-v-check-name" t-esc="o.name"/>
+                      <span t-if="o.number or o.branch" class="mm-v-muted mm-v-small"><t t-esc="o.number"/><t t-if="o.number and o.branch"> · </t><t t-esc="o.branch"/></span>
+                    </label>
+                  </t>
+                </div>
+              </div>
+            </t>
+          </div>
+          <div class="mm-v-drawer-foot">
+            <button class="mm-v-btn" t-on-click="resetDrawer" t-esc="t('reset')"/>
+            <button class="mm-v-btn mm-v-btn-primary" t-on-click="applyDrawer" t-esc="t('showResults')"/>
+          </div>
+        </aside>
+      </t>
+    </div>
+  </t>
+</templates>

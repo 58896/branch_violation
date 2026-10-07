@@ -1,0 +1,3995 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mm_branch_violation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-01 07:29+0000\n"
+"PO-Revision-Date: 2026-10-01 07:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid " and %s more"
+msgstr " و%s آخرين"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+msgid ""
+"% mistakes score\n"
+"                        (100 - violation points per employee); a branch without a sales target is scored on\n"
+"                        mistakes only. Employee score = 100 - violation points. Only approved violations count.\n"
+"                        Arrows compare with the previous period ("
+msgstr ""
+"% لنتيجة الأخطاء\n"
+"                        (100 - نقاط الملاحظات لكل موظف)؛ الفرع بدون هدف مبيعات يُقيّم\n"
+"                        بالأخطاء فقط. نتيجة الموظف = 100 - نقاط الملاحظات. تحتسب الملاحظات المعتمدة فقط.\n"
+"                        الأسهم مقارنة بالفترة السابقة ("
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid ""
+"% mistakes score (100 - violation points per employee);\n"
+"                        no sales target = mistakes only. Employee score = 100 - violation points. Only approved\n"
+"                        violations count. Movement compares with"
+msgstr ""
+"% لنتيجة الأخطاء (100 - نقاط الملاحظات لكل موظف)؛\n"
+"                        بدون هدف مبيعات = الأخطاء فقط. نتيجة الموظف = 100 - نقاط الملاحظات. تحتسب الملاحظات\n"
+"                        المعتمدة فقط. التغير مقارنة بـ"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+msgid ""
+"% sales target achieved\n"
+"                        (capped at 100%) +"
+msgstr ""
+"% لتحقيق هدف المبيعات\n"
+"                        (بحد أقصى 100%) +"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid ""
+"% sales target achieved (capped at 100%)\n"
+"                        +"
+msgstr ""
+"% لتحقيق هدف المبيعات (بحد أقصى 100%)\n"
+"                        +"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "%(b)s has the most points: %(p)s (%(s)s%% of the total)."
+msgstr "%(b)s هو الأعلى في النقاط: %(p)s (%(s)s%% من الإجمالي)."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "%(customer)s %(phone)s - branch %(branch)s"
+msgstr "%(customer)s %(phone)s - فرع %(branch)s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "%(emp)s - %(type)s (%(points)s%%)"
+msgstr ""
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid ""
+"%(n)s employee(s) at CRITICAL level (30%%+ deduction): %(names)s%(more)s."
+msgstr ""
+"%(n)s موظف/موظفين في المستوى الحرج (خصم 30%% أو أكثر): %(names)s%(more)s."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid ""
+"%(n)s employees had no mistakes in this period: ties go to a spotless "
+"record, then the longest run without a violation."
+msgstr ""
+"%(n)s موظفين بدون أخطاء في هذه الفترة: عند التعادل يتقدم صاحب السجل النظيف "
+"تماماً، ثم الأطول مدة بدون ملاحظات."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid ""
+"%(n)s employees share first place with exactly the same record: they are "
+"listed alphabetically. Pick the Employee of the Period among them."
+msgstr ""
+"%(n)s موظفين يتشاركون المركز الأول بنفس السجل تماماً: مرتبون أبجدياً. اختر "
+"موظف الفترة من بينهم."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid ""
+"%(v)s violations (%(p)s points) recorded for %(e)s employees in %(b)s "
+"branches."
+msgstr "تم تسجيل %(v)s ملاحظة (%(p)s نقطة) على %(e)s موظف في %(b)s فرع."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "%(v)s violations · %(c)s customer complaints"
+msgstr "%(v)s ملاحظات · %(c)s شكاوى عملاء"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "%s branches tied"
+msgstr "%s فروع متعادلة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "%s days without a mistake"
+msgstr "%s يوماً بدون أخطاء"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"%s is Closed: its commission period is already settled, so it cannot be "
+"cancelled."
+msgstr "%s مغلقة: فترة العمولة الخاصة بها تمت تسويتها، لذلك لا يمكن إلغاؤها."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "%s is already cancelled."
+msgstr "%s ملغاة بالفعل."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "%s is already confirmed."
+msgstr "%s مؤكد بالفعل."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "%s is confirmed: its figures are final."
+msgstr "%s مؤكد: أرقامه نهائية."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "%s is not a customer complaint: it has no customer response."
+msgstr "%s ليست شكوى عميل: لا يوجد لها رد على العميل."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "%s is not confirmed."
+msgstr "%s غير مؤكد."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid ""
+"%s violation(s) in this period are still waiting for approval and are not "
+"counted yet."
+msgstr "%s ملاحظة في هذه الفترة ما زالت بانتظار الاعتماد ولم تُحتسب بعد."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "%s: write the Action Taken before closing the complaint."
+msgstr "%s: اكتب الإجراء المتخذ قبل إغلاق الشكوى."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "%s: you cannot approve a violation recorded against yourself."
+msgstr "%s: لا يمكنك اعتماد ملاحظة مسجلة عليك شخصياً."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"%s: you submitted this violation, so another manager must approve it (four-"
+"eyes rule)."
+msgstr ""
+"%s: أنت من أرسل هذه الملاحظة، لذا يجب أن يعتمدها مدير آخر (مبدأ الأربع "
+"أعين)."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_employee_line.py:0
+msgid "(carried from %s)"
+msgstr "(مُرحّلة من %s)"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "). ▲ more violations = worse."
+msgstr "). ▲ ملاحظات أكثر = أسوأ."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "<b>Branches:</b>"
+msgstr "<b>الفروع:</b>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "<b>Filters:</b>"
+msgstr "<b>عوامل التصفية:</b>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "<b>Generated By:</b>"
+msgstr "<b>أُعدّ بواسطة:</b>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "<b>Generated On:</b>"
+msgstr "<b>تاريخ الإعداد:</b>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid ""
+"<span class=\"badge text-bg-danger ms-2\" invisible=\"not "
+"response_overdue\">Overdue</span>"
+msgstr ""
+"<span class=\"badge text-bg-danger ms-2\" invisible=\"not "
+"response_overdue\">متأخرة</span>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid "<span class=\"col-1\">%</span>"
+msgstr ""
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid "<span class=\"ms-1\">hours</span>"
+msgstr "<span class=\"ms-1\">ساعة</span>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.hr_employee_view_form_inherit_mm_violation
+msgid "<span class=\"o_stat_text\">Violations (Month)</span>"
+msgstr "<span class=\"o_stat_text\">الملاحظات (الشهر)</span>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.hr_employee_view_form_inherit_mm_violation
+msgid "<span> / </span>"
+msgstr ""
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid ""
+"<span><span class=\"pstc-badge pstc-badge-red\">Critical</span> deduction 30% or more</span>\n"
+"                            <span><span class=\"pstc-badge pstc-badge-orange\">Warning</span> 15% to 29%</span>\n"
+"                            <span><span class=\"pstc-badge pstc-badge-green\">Low</span> below 15%</span>\n"
+"                            <span>Deduction % = total points, capped at 100%.</span>"
+msgstr ""
+"<span><span class=\"pstc-badge pstc-badge-red\">حرج</span> خصم 30% أو أكثر</span>\n"
+"                            <span><span class=\"pstc-badge pstc-badge-orange\">تحذير</span> من 15% إلى 29%</span>\n"
+"                            <span><span class=\"pstc-badge pstc-badge-green\">منخفض</span> أقل من 15%</span>\n"
+"                            <span>نسبة الخصم = إجمالي النقاط، بحد أقصى 100%.</span>"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+msgid "<span>→</span>"
+msgstr ""
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "= No change"
+msgstr "= بدون تغيير"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "A cancellation reason is required."
+msgstr "سبب الإلغاء مطلوب."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "A confirmed month cannot be changed. Reset it to Draft first."
+msgstr "لا يمكن تعديل شهر مؤكد. أعده إلى مسودة أولاً."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "A confirmed month cannot be deleted. Reset it to Draft first."
+msgstr "لا يمكن حذف شهر مؤكد. أعده إلى مسودة أولاً."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"A violation is always created as New. Use the workflow buttons to change its"
+" status."
+msgstr ""
+"تُنشأ الملاحظة دائماً بحالة جديدة. استخدم أزرار سير العمل لتغيير حالتها."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_needaction
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_needaction
+msgid "Action Needed"
+msgstr "إجراء مطلوب"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_action
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Action Taken"
+msgstr "الإجراء المتخذ"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__employee_active
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__active
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__active
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Active"
+msgstr "نشط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "زخرفة استثناء النشاط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "أيقونة نوع النشاط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__status_filter__all
+msgid "All (except Cancelled)"
+msgstr "الكل (عدا الملغاة)"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "All branches"
+msgstr "جميع الفروع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Already up to date: %s"
+msgstr "محدّث مسبقاً: %s"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_employee_number_import__update_job_branch
+msgid ""
+"Also set each matched employee's job position (created if it does not exist "
+"yet) and branch, when the file has those columns."
+msgstr ""
+"تعيين المسمى الوظيفي (يُنشأ إن لم يكن موجوداً) والفرع لكل موظف مطابق، إذا "
+"كان الملف يحتوي على هذه الأعمدة."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__update_job_branch
+msgid "Also update job position and branch"
+msgstr "تحديث المسمى الوظيفي والفرع أيضاً"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import_line__match_status__ambiguous
+msgid "Ambiguous"
+msgstr "غير محدد (أكثر من موظف)"
+
+#. module: mm_branch_violation
+#: model:ir.model.constraint,message:mm_branch_violation.constraint_mm_violation_deduction_line_period_employee_uniq
+msgid "An employee can only appear once per month."
+msgstr "يظهر الموظف مرة واحدة فقط في كل شهر."
+
+#. module: mm_branch_violation
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_branch_violation_analysis
+msgid "Analysis"
+msgstr "التحليل"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Apply"
+msgstr "تطبيق"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Approval"
+msgstr "الاعتماد"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__state__approved
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Approved"
+msgstr "تم الإجراء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__approved_by_id
+msgid "Approved By"
+msgstr "اعتمدها"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__approved_date
+msgid "Approved Date"
+msgstr "تاريخ الاعتماد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__mm_is_carried
+msgid ""
+"Approved after its own commission period was already settled, so it is "
+"deducted in the employee's next open period instead."
+msgstr ""
+"اعتُمدت بعد تسوية فترة العمولة الخاصة بها، لذلك تُخصم في الفترة المفتوحة "
+"التالية للموظف."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"Approved after the commission for %s was already settled: it will be "
+"deducted in the employee's next open commission period."
+msgstr ""
+"اعتُمدت بعد تسوية عمولة %s: سيتم خصمها في فترة العمولة المفتوحة التالية "
+"للموظف."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Approved by %s"
+msgstr "اعتمدها %s"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Approved, but not counted on any open commission line yet"
+msgstr "معتمدة، ولكن لم تُحتسب في أي سطر عمولة مفتوح بعد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__4
+msgid "April"
+msgstr "أبريل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__language__ar_001
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__language__ar_001
+msgid "Arabic"
+msgstr "العربية"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_source_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_type_view_search
+msgid "Archived"
+msgstr "مؤرشف"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_user_id
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Assigned To"
+msgstr "مسندة إلى"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Assigned to Me"
+msgstr "المسندة إلي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_attachment_count
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__attention_count
+msgid "Attention Count"
+msgstr "عدد ما يحتاج مراجعة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__8
+msgid "August"
+msgstr "أغسطس"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__auto_employee_id
+msgid "Auto Employee"
+msgstr "الموظف المطابق تلقائياً"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_result__mm_auto_split_signature
+msgid "Automatic Split Fingerprint"
+msgstr "بصمة التوزيع التلقائي"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_sales_target.py:0
+msgid "Automatic employee split skipped: %s"
+msgstr "تم تخطي التوزيع التلقائي على الموظفين: %s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_sales_target.py:0
+msgid "Automatic split"
+msgstr "توزيع تلقائي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__avg_hours
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Avg Hours to Contact"
+msgstr "متوسط ساعات التواصل"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Avg Points / Employee"
+msgstr "متوسط النقاط / موظف"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__response_state__pending
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Awaiting Response"
+msgstr "بانتظار الرد"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Back"
+msgstr "رجوع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Best Branch"
+msgstr "أفضل فرع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__branch_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__branch_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__branch_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__branch_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__branch_names
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Branch"
+msgstr "المعرض"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__branch_line_ids
+msgid "Branch Line"
+msgstr "سطر الفرع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Branch Needing Attention"
+msgstr "فرع يحتاج إلى متابعة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Branch Ranking"
+msgstr "ترتيب الفروع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_res_company__mm_score_weight_mistakes
+#: model:ir.model.fields,field_description:mm_branch_violation.field_res_config_settings__mm_score_weight_mistakes
+msgid "Branch Score: Mistakes Weight (%)"
+msgstr "نتيجة الفرع: وزن الأخطاء (%)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_res_company__mm_score_weight_sales
+#: model:ir.model.fields,field_description:mm_branch_violation.field_res_config_settings__mm_score_weight_sales
+msgid "Branch Score: Sales Weight (%)"
+msgstr "نتيجة الفرع: وزن المبيعات (%)"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Branch Violation"
+msgstr "ملاحظة فرع"
+
+#. module: mm_branch_violation
+#: model:ir.module.category,name:mm_branch_violation.module_category_branch_violation
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_branch_violation_root
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_list
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid "Branch Violations"
+msgstr "ملاحظات وتقارير الفروع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model,name:mm_branch_violation.model_mm_violation_report_wizard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_report_wizard_view_form
+msgid "Branch Violations Report"
+msgstr "تقرير ملاحظات الفروع"
+
+#. module: mm_branch_violation
+#: model:ir.actions.report,name:mm_branch_violation.action_report_mm_violation
+msgid "Branch Violations Report (PDF)"
+msgstr "تقرير ملاحظات الفروع (PDF)"
+
+#. module: mm_branch_violation
+#: model:ir.actions.server,name:mm_branch_violation.ir_cron_mm_response_overdue_ir_actions_server
+msgid "Branch Violations: overdue customer responses"
+msgstr "ملاحظات الفروع: ردود العملاء المتأخرة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__file_branch
+msgid "Branch in File"
+msgstr "الفرع في الملف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Branch not found - pick it or skip the row."
+msgstr "الفرع غير موجود - اختره أو تخطَّ الصف."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Branch score ="
+msgstr "نتيجة الفرع ="
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__branch_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__branch_ids
+msgid "Branches"
+msgstr "الفروع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Branches Affected"
+msgstr "الفروع المتأثرة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Branches updated: %s"
+msgstr "الفروع المحدثة: %s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid ""
+"Branches were NOT saved: employees have no Branch field (it comes with the "
+"POS Sales Target & Commission module)."
+msgstr ""
+"لم يتم حفظ الفروع: لا يوجد حقل فرع للموظفين (يأتي مع موديول مستهدفات وعمولات"
+" نقاط البيع)."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "By Branch"
+msgstr "حسب الفرع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "By Employee"
+msgstr "حسب الموظف"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "By Note Type"
+msgstr "حسب نوع الملاحظة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "By Source"
+msgstr "حسب المصدر"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "By Violation"
+msgstr "حسب المخالفة"
+
+#. module: mm_branch_violation
+#: model:mail.activity.type,summary:mm_branch_violation.mail_activity_type_customer_response
+msgid "Call the customer back"
+msgstr "معاودة الاتصال بالعميل"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Call the customer back: %s"
+msgstr "معاودة الاتصال بالعميل: %s"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_02
+msgid "Camera Monitoring"
+msgstr "مراقبة كاميرات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__can_edit_points
+msgid "Can Edit Points"
+msgstr "يمكن تعديل النقاط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__can_edit_response
+msgid "Can Edit Response"
+msgstr "يمكن تعديل الرد"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_violation_cancel_wizard
+msgid "Cancel Branch Violation"
+msgstr "إلغاء ملاحظة فرع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__cancel_reason
+msgid "Cancel Reason"
+msgstr "سبب الإلغاء"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_cancel_wizard_view_form
+msgid "Cancel Violation"
+msgstr "إلغاء الملاحظة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__reason
+msgid "Cancellation Reason"
+msgstr "سبب الإلغاء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__state__cancelled
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__status_filter__cancelled
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Cancelled"
+msgstr "ملغاة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Cancelled violations cannot be edited. Reset them to New first."
+msgstr "لا يمكن تعديل الملاحظات الملغاة. أعدها إلى جديدة أولاً."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_is_carried
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Carried Forward"
+msgstr "مُرحّلة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_carried_from_label
+msgid "Carried From"
+msgstr "مُرحّلة من"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_carried_from_date_to
+msgid "Carried Period End"
+msgstr "نهاية الفترة المُرحّل منها"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_carried_from_date_from
+msgid "Carried Period Start"
+msgstr "بداية الفترة المُرحّل منها"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Carried forward"
+msgstr "مُرحّلة"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_13
+msgid "Cash differences"
+msgstr "وجود فروقات نقدية"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_16
+msgid "Causing a government violation"
+msgstr "التسبب في مخالفة حكومية"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_14
+msgid "Changing the payment method"
+msgstr "تغيير طريقة الدفع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import_line__match_status__manual
+msgid "Chosen Manually"
+msgstr "تم الاختيار يدوياً"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_report_wizard_view_form
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__state__closed
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Closed"
+msgstr "مغلقة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_closed_by_id
+msgid "Closed By"
+msgstr "أغلقت بواسطة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_closed_date
+msgid "Closed On"
+msgstr "تاريخ الإغلاق"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"Closed violations are locked: the commission period that counted them has "
+"already been settled."
+msgstr "الملاحظات المغلقة مقفلة: فترة العمولة التي احتسبتها تمت تسويتها."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Commission Deduction"
+msgstr "الخصم من العمولة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_employee_line.py:0
+msgid ""
+"Commission distribution cancelled: violation released back to Approved."
+msgstr "تم إلغاء توزيع العمولة: أُعيدت الملاحظة إلى حالة تم الإجراء."
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_res_company
+msgid "Companies"
+msgstr "الشركات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__company_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__company_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__company_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__company_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__company_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__company_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__company_id
+msgid "Company"
+msgstr "الشركة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__complaint_received_at
+msgid "Complaint Received"
+msgstr "تاريخ استلام الشكوى"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Complaint closed by %s"
+msgstr "أغلق الشكوى %s"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__complaints
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__complaints
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__complaints
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Complaints"
+msgstr "الشكاوى"
+
+#. module: mm_branch_violation
+#: model_terms:ir.actions.act_window,help:mm_branch_violation.mm_branch_violation_action_complaints
+msgid ""
+"Complaints from customers (calls, Google, Instagram, WhatsApp...) appear\n"
+"               here until Customer Service contacts the customer and closes them."
+msgstr ""
+"تظهر هنا شكاوى العملاء (المكالمات، جوجل، إنستغرام، واتساب...)\n"
+"               حتى تتواصل خدمة العملاء مع العميل وتغلق الشكوى."
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_res_config_settings
+msgid "Config Settings"
+msgstr "إعدادات التهيئة"
+
+#. module: mm_branch_violation
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_branch_violation_config
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+msgid "Confirm Month"
+msgstr "تأكيد الشهر"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Confirm the earlier month(s) first: %s"
+msgstr "أكّد الشهر/الأشهر السابقة أولاً: %s"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+msgid ""
+"Confirm this month? Its violations become Closed and will not be deducted "
+"again."
+msgstr "تأكيد هذا الشهر؟ ستُغلق ملاحظاته ولن تُخصم مرة أخرى."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__state__confirmed
+msgid "Confirmed"
+msgstr "مؤكد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__confirmed_by_id
+msgid "Confirmed By"
+msgstr "أكّده"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__confirmed_date
+msgid "Confirmed Date"
+msgstr "تاريخ التأكيد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__contacted
+msgid "Contacted"
+msgstr "تم التواصل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_contacted_by_id
+msgid "Contacted By"
+msgstr "تم التواصل بواسطة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__late
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Contacted Late"
+msgstr "تواصل متأخر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_contacted_date
+msgid "Contacted On"
+msgstr "تاريخ التواصل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__on_time
+msgid "Contacted On Time"
+msgstr "تواصل في الوقت"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_performance_scorecard_service__on_time_pct
+msgid "Contacted on time / (contacted + overdue)."
+msgstr "التواصل في الوقت / (تم التواصل + المتأخرة)."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Could not read the file as .xlsx: %s"
+msgstr "تعذرت قراءة الملف كملف xlsx: %s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Count"
+msgstr "العدد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__status_filter__counted
+msgid "Counted (Approved + Closed)"
+msgstr "المحتسبة (تم الإجراء + مغلقة)"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Counted (Approved or Closed)"
+msgstr "محتسبة (تم الإجراء أو مغلقة)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_commission_line_ids
+msgid "Counted On"
+msgstr "محتسبة في"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_employee_line__mm_violation_ids
+msgid "Counted Violations"
+msgstr "الملاحظات المحتسبة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__create_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__create_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Critical"
+msgstr "حرج"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__period__custom
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__period__custom
+msgid "Custom"
+msgstr "مخصص"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Customer"
+msgstr "العميل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__note_type__customer_complaint
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__note_type__customer_complaint
+msgid "Customer Complaint"
+msgstr "شكوى عميل"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_03
+msgid "Customer Complaint (Call)"
+msgstr "شكوي عميل ( إتصال )"
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_branch_violation_action_complaints
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_branch_violation_complaints
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_list_complaints
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid "Customer Complaints"
+msgstr "شكاوى العملاء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__response_state__contacted
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Customer Contacted"
+msgstr "تم التواصل مع العميل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__customer_name
+msgid "Customer Name"
+msgstr "اسم العميل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__customer_phone
+msgid "Customer Phone"
+msgstr "جوال العميل"
+
+#. module: mm_branch_violation
+#: model:mail.activity.type,name:mm_branch_violation.mail_activity_type_customer_response
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Customer Response"
+msgstr "الرد على العميل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_res_company__mm_response_deadline_hours
+#: model:ir.model.fields,field_description:mm_branch_violation.field_res_config_settings__mm_response_deadline_hours
+msgid "Customer Response Deadline (Hours)"
+msgstr "مهلة الرد على العميل (بالساعات)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__user_id
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__entering_department__customer_service
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__entering_department__customer_service
+#: model:res.groups,name:mm_branch_violation.group_violation_customer_service
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Customer Service"
+msgstr "خدمة العملاء"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+msgid ""
+"Customer Service calls customers back for every branch, so this is measured per\n"
+"                                person, not per branch. A complaint counts for the person assigned to it, else for\n"
+"                                who contacted the customer."
+msgstr ""
+"خدمة العملاء تتواصل مع العملاء لجميع الفروع، لذلك يقاس الأداء لكل\n"
+"                                موظف وليس لكل فرع. تحتسب الشكوى للموظف المسندة إليه، وإلا لمن\n"
+"                                تواصل مع العميل."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__response_user_id
+msgid ""
+"Customer Service person who must call the customer back. Empty: every "
+"Customer Service user gets the reminder."
+msgstr ""
+"موظف خدمة العملاء المسؤول عن معاودة الاتصال بالعميل. إذا ترك فارغاً يصل "
+"التذكير لجميع موظفي خدمة العملاء."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Customer contacted by %s"
+msgstr "تم التواصل مع العميل بواسطة %s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__date
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__date_from
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__date_from
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__date_from
+msgid "Date From"
+msgstr "من تاريخ"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__date_to
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__date_to
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__date_to
+msgid "Date To"
+msgstr "إلى تاريخ"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+msgid "Dates"
+msgstr "التواريخ"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__clean_days
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Days Without Mistake"
+msgstr "أيام بدون أخطاء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_performance_scorecard_employee__clean_days
+msgid ""
+"Days since the employee's last approved violation (or since the employee was"
+" added, if never)."
+msgstr ""
+"عدد الأيام منذ آخر ملاحظة معتمدة على الموظف (أو منذ إضافة الموظف إن لم "
+"توجد)."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__response_overdue
+msgid "Deadline passed and the customer has not been contacted yet."
+msgstr "انتهت المهلة ولم يتم التواصل مع العميل بعد."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_performance_scorecard_service__overdue
+msgid "Deadline passed and the customer is still not contacted."
+msgstr "انتهت المهلة ولم يتم التواصل مع العميل بعد."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__12
+msgid "December"
+msgstr "ديسمبر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__mm_deduction_status__deducted
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Deducted"
+msgstr "تم الخصم"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_deduction_period_id
+msgid "Deducted In Month"
+msgstr "خُصمت في شهر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_commission_line_id
+msgid "Deducted On"
+msgstr "خُصمت في"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Deducted in the monthly deductions of %s. Closed."
+msgstr "خُصمت ضمن الخصومات الشهرية لـ %s. أُغلقت."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_employee_line.py:0
+msgid "Deducted on commission line %(line)s (%(period)s). Closed."
+msgstr "تم الخصم في سطر العمولة %(line)s (%(period)s). أُغلقت."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_deduction_status
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Deduction"
+msgstr "الخصم"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__deduction_percent
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Deduction %"
+msgstr "نسبة الخصم %"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid "Deduction Amount"
+msgstr "مبلغ الخصم"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_employee_line__mm_deduction_locked
+msgid "Deduction Locked"
+msgstr "الخصم مقفل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__points
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__points
+msgid "Deduction Points (%)"
+msgstr "نقاط الخصم %"
+
+#. module: mm_branch_violation
+#: model:ir.model.constraint,message:mm_branch_violation.constraint_mm_branch_violation_points_range
+#: model:ir.model.constraint,message:mm_branch_violation.constraint_mm_violation_type_points_range
+msgid "Deduction points must be between 0 and 100."
+msgstr "يجب أن تكون نقاط الخصم بين 0 و 100."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_employee_line_view_list_inherit_mm_violation
+msgid "Deductions"
+msgstr "الخصومات"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_18
+msgid "Delay preparing and handing over online orders"
+msgstr "التأخير في تجهيز وتسليم الطلبات الإلكترونية"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_21
+msgid "Delay receiving goods in the system without reason"
+msgstr "التأخير في استلام البضاعة على النظام بدون سبب"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__description
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Description"
+msgstr "سبب ووصف الملاحظة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_cancel_wizard_view_form
+msgid "Discard"
+msgstr "تجاهل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__display_name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import__state__done
+msgid "Done"
+msgstr "تم"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_branch__trend__down
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_employee__trend__down
+msgid "Down"
+msgstr "تراجع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.actions.act_window,help:mm_branch_violation.mm_branch_violation_action
+msgid ""
+"Each violation records the branch, the employee, the source and the\n"
+"               deduction points. A manager approves it before it counts."
+msgstr ""
+"كل ملاحظة تسجل المعرض والموظف والمصدر ونقاط الخصم.\n"
+"               يعتمدها مدير قبل أن تُحتسب."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model,name:mm_branch_violation.model_hr_employee
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__employee_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__employee_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__employee_id
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Employee"
+msgstr "الموظف"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__employee_count
+msgid "Employee Count"
+msgstr "عدد الموظفين"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__employee_line_ids
+msgid "Employee Line"
+msgstr "سطر الموظف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid "Employee Name"
+msgstr "اسم الموظف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_hr_employee__mm_employee_number
+#: model:ir.model.fields,field_description:mm_branch_violation.field_hr_employee_public__mm_employee_number
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__employee_number
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__file_employee_number
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__employee_number
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Employee Number"
+msgstr "الرقم الوظيفي"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Employee Ranking"
+msgstr "ترتيب الموظفين"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Employee Ranking - Top 15"
+msgstr "ترتيب الموظفين - أفضل 15"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_hr_employee__mm_employee_number
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__employee_number
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_line__employee_number
+msgid ""
+"Employee number from Jisr (the HR/payroll system). Used to identify "
+"employees on violations and in the Jisr export."
+msgstr ""
+"الرقم الوظيفي من جسر (نظام الموارد البشرية والرواتب). يُستخدم لتحديد الموظف "
+"في الملاحظات وفي ملف التصدير إلى جسر."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Employee numbers set or changed: %s"
+msgstr "الأرقام الوظيفية التي تم تعيينها أو تغييرها: %s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__is_employee_of_month
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Employee of the Period"
+msgstr "موظف الفترة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__headcount
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__line_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__employee_ids
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_list
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Employees"
+msgstr "الموظفون"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Employees Affected"
+msgstr "الموظفون المتأثرون"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Employees Without Mistakes"
+msgstr "موظفون بدون أخطاء"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Employees at 30%+"
+msgstr "موظفون بخصم 30%+"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__language__en_us
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__language__en_us
+msgid "English"
+msgstr "الإنجليزية"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__entering_department
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__entering_department
+msgid "Entering Department"
+msgstr "الإدارة المدخلة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__file
+msgid "Excel File"
+msgstr "ملف Excel"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_08
+msgid "Expired or damaged product on display"
+msgstr "وجود منتج منتهي الصلاحية أو تالف بالعرض"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_report_wizard_view_form
+msgid "Export Excel"
+msgstr "تصدير Excel"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_result_view_form_inherit_mm_violation
+msgid "Export for Jisr"
+msgstr "تصدير إلى جسر"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid "Exported for Jisr by %s."
+msgstr "تم التصدير إلى جسر بواسطة %s."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid "Exporting commissions requires the View Commission permission."
+msgstr "تصدير العمولات يتطلب صلاحية عرض العمولة."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__2
+msgid "February"
+msgstr "فبراير"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_01
+msgid "Field Visit"
+msgstr "زيارة ميدانية"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__filename
+msgid "Filename"
+msgstr "اسم الملف"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_report_wizard_view_form
+msgid "Filters (leave empty for all)"
+msgstr "عوامل التصفية (اتركها فارغة للكل)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_pos_commission_employee_line__net_commission_amount
+msgid ""
+"Final commission minus the violation deduction. This is what the employee is"
+" paid."
+msgstr "العمولة النهائية مطروحاً منها خصم الملاحظات. هذا ما يُصرف للموظف."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__entering_department__finance
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__entering_department__finance
+msgid "Finance"
+msgstr "المالية"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__note_type__financial
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__note_type__financial
+msgid "Financial"
+msgstr "مالية"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_04
+msgid "Financial Note"
+msgstr "ملاحظة مالية"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid ""
+"Fix or skip these rows first:\n"
+"%s"
+msgstr ""
+"صحّح هذه الصفوف أو تخطَّها أولاً:\n"
+"%s"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Follow-up"
+msgstr "المتابعة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_follower_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_follower_ids
+msgid "Followers"
+msgstr "المتابعون"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_partner_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "أيقونة Font Awesome مثل fa-tasks"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_06
+msgid "GOOGLE"
+msgstr ""
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Generated By"
+msgstr "أُعدّ بواسطة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Generated On"
+msgstr "تاريخ الإعداد"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_09
+msgid "Government Note (Baladi)"
+msgstr "ملاحظة حكومية ( بلدي )"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_10
+msgid "Government Note (Civil Defense)"
+msgstr "ملاحظة حكومية ( الدفاع المدني )"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__note_type__government
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__note_type__government
+msgid "Government Violation"
+msgstr "مخالفة حكومية"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_employee_line_view_form_inherit_mm_violation
+msgid "Gross Commission"
+msgstr "إجمالي العمولة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__has_branch_column
+msgid "Has Branch Column"
+msgstr "يحتوي عمود الفرع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__has_job_column
+msgid "Has Job Column"
+msgstr "يحتوي عمود المسمى الوظيفي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__has_message
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__has_message
+msgid "Has Message"
+msgstr "يحتوي على رسالة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__has_target
+msgid "Has Sales Target"
+msgstr "لديه هدف مبيعات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid ""
+"Hours Customer Service has to contact a complaining customer back. A "
+"reminder goes to the managers when it is missed. Applies to complaints "
+"received after the change."
+msgstr ""
+"عدد الساعات المتاحة لخدمة العملاء للتواصل مع العميل المشتكي. يصل تذكير "
+"للمدراء عند تجاوزها. تطبق على الشكاوى المستلمة بعد التغيير."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_res_company__mm_response_deadline_hours
+#: model:ir.model.fields,help:mm_branch_violation.field_res_config_settings__mm_response_deadline_hours
+msgid ""
+"Hours Customer Service has to contact a complaining customer back. Applies "
+"to complaints received after the change."
+msgstr ""
+"عدد الساعات المتاحة لخدمة العملاء للتواصل مع العميل المشتكي. تطبق على "
+"الشكاوى المستلمة بعد التغيير."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid ""
+"How the branch score is built. Sales = the branch's sales target achievement"
+" (capped at 100%). Mistakes = 100 - violation points per employee (customer "
+"complaints included). The two must add up to 100. A branch without a sales "
+"target is scored on mistakes only."
+msgstr ""
+"طريقة حساب نتيجة الفرع. المبيعات = نسبة تحقيق هدف مبيعات الفرع (بحد أقصى "
+"100%). الأخطاء = 100 - نقاط الملاحظات لكل موظف (تشمل شكاوى العملاء). يجب أن "
+"يكون مجموعهما 100. الفرع بدون هدف مبيعات يُقيّم بالأخطاء فقط."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__id
+msgid "ID"
+msgstr "المعرف"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_07
+msgid "INSTAGRAM"
+msgstr ""
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_exception_icon
+msgid "Icon"
+msgstr "الأيقونة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "أيقونة للإشارة إلى نشاط استثنائي."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__message_needaction
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_period__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديده، فهناك رسائل جديدة تحتاج لانتباهك."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__message_has_error
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__message_has_sms_error
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_period__message_has_error
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_period__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده، فبعض الرسائل بها خطأ في التسليم."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_employee_number_import_line__employee_active
+msgid ""
+"If the active field is set to False, it will allow you to hide the resource "
+"record without removing it."
+msgstr "إذا كان الحقل النشط غير محدد، يمكنك إخفاء السجل دون حذفه."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__import_id
+msgid "Import"
+msgstr "استيراد"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_employee_number_import_action
+#: model:ir.model,name:mm_branch_violation.model_mm_employee_number_import
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_employee_number_import
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Import Employee Numbers"
+msgstr "استيراد الأرقام الوظيفية"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_employee_number_import_line
+msgid "Import Employee Numbers - Row"
+msgstr "استيراد الأرقام الوظيفية - صف"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__mm_deduction_status__counted
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "In an Open Commission"
+msgstr "في عمولة مفتوحة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__include_details
+msgid "Include Full Violation List"
+msgstr "تضمين قائمة الملاحظات كاملة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__has_carried
+msgid "Includes Carried"
+msgstr "يشمل مُرحّلة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__is_bottom
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__is_bottom
+msgid "Is Bottom"
+msgstr "في المؤخرة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_is_follower
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_is_follower
+msgid "Is Follower"
+msgstr "متابع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__is_readonly
+msgid "Is Readonly"
+msgstr "للقراءة فقط"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__issue
+msgid "Issue"
+msgstr "المشكلة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__1
+msgid "January"
+msgstr "يناير"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__job_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__job_id
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Job Position"
+msgstr "المسمى الوظيفي"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__job_ids
+msgid "Job Positions"
+msgstr "المسميات الوظيفية"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__file_job
+msgid "Job in File"
+msgstr "المسمى الوظيفي في الملف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Job positions created: %s"
+msgstr "المسميات الوظيفية التي تم إنشاؤها: %s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Job positions updated: %s"
+msgstr "المسميات الوظيفية المحدثة: %s"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__7
+msgid "July"
+msgstr "يوليو"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__6
+msgid "June"
+msgstr "يونيو"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Key Insights"
+msgstr "أهم المؤشرات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__language
+msgid "Language"
+msgstr "اللغة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__period__last_month
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__period__last_month
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Last Month"
+msgstr "الشهر الماضي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__computed_date
+msgid "Last Refreshed"
+msgstr "آخر تحديث"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__write_uid
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__write_date
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__period__last_year
+msgid "Last Year"
+msgstr "السنة الماضية"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_late
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Late Response"
+msgstr "رد متأخر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__complaints_late
+msgid "Late Responses"
+msgstr "ردود متأخرة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_performance_scorecard__branch_ids
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_report_wizard__branch_ids
+msgid "Leave empty for all branches."
+msgstr "اتركه فارغاً لكل الفروع."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_report_wizard__entering_department
+msgid "Leave empty for all departments."
+msgstr "اتركه فارغاً لكل الإدارات."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_report_wizard__employee_ids
+msgid "Leave empty for all employees."
+msgstr "اتركه فارغاً لكل الموظفين."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_report_wizard__job_ids
+msgid "Leave empty for all job positions."
+msgstr "اتركه فارغاً لكل المسميات الوظيفية."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_report_wizard__note_type
+msgid "Leave empty for all note types."
+msgstr "اتركه فارغاً لكل أنواع الملاحظات."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_report_wizard__source_ids
+msgid "Leave empty for all sources."
+msgstr "اتركه فارغاً لكل المصادر."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_report_wizard__violation_type_ids
+msgid "Leave empty for all violation types."
+msgstr "اتركه فارغاً لكل أنواع المخالفات."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_employee_number_import__sheet_name
+msgid "Leave empty to use the sheet with the most employee rows."
+msgstr "اتركه فارغاً لاستخدام الورقة التي تحتوي على أكبر عدد من الموظفين."
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_01
+msgid "Leaving during working hours without permission or excuse"
+msgstr "الخروج أثناء ساعات العمل دون استئذان أو عذر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__line_ids
+msgid "Line"
+msgstr "السطر"
+
+#. module: mm_branch_violation
+#: model_terms:ir.actions.act_window,help:mm_branch_violation.mm_branch_violation_action
+msgid "Log the first branch violation"
+msgstr "سجّل أول ملاحظة فرع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Low"
+msgstr "منخفض"
+
+#. module: mm_branch_violation
+#: model:res.groups,name:mm_branch_violation.group_violation_manager
+msgid "Manager"
+msgstr "مدير"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__3
+msgid "March"
+msgstr "مارس"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__match_status
+msgid "Match Status"
+msgstr "حالة المطابقة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import_line__match_status__matched
+msgid "Matched"
+msgstr "مطابق"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__matched_count
+msgid "Matched Count"
+msgstr "عدد المطابق"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__5
+msgid "May"
+msgstr "مايو"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_has_error
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_ids
+msgid "Messages"
+msgstr "الرسائل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__missing_number_count
+msgid "Missing Employee Numbers"
+msgstr "أرقام وظيفية ناقصة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid "Mistakes"
+msgstr "الأخطاء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__mistakes_score
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Mistakes Score"
+msgstr "نتيجة الأخطاء"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_17
+msgid "Mistakes preparing or checking online orders (delivery apps)"
+msgstr "الخطأ في تجهيز أو مراجعة الطلبات الإلكترونية (تطبيقات التوصيل)"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_04
+msgid "Mistreating or ignoring a customer"
+msgstr "سوء التعامل مع العميل أو تجاهله"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__month
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Month"
+msgstr "الشهر"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Month confirmed: %(v)s violations of %(e)s employees closed."
+msgstr "تم تأكيد الشهر: أُغلقت %(v)s ملاحظة لعدد %(e)s موظف."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__mm_deduction_line_ids
+msgid "Monthly Deduction Lines"
+msgstr "أسطر الخصم الشهري"
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_violation_deduction_period_action
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_violation_deduction_period
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_list
+msgid "Monthly Deductions"
+msgstr "الخصومات الشهرية"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Monthly Trend"
+msgstr "الاتجاه الشهري"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_violation_deduction_line
+msgid "Monthly Violation Deduction - Employee"
+msgstr "خصم الملاحظات الشهري - موظف"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_violation_deduction_period
+msgid "Monthly Violation Deductions"
+msgstr "خصومات الملاحظات الشهرية"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Monthly deductions of %s reset to Draft: violation back to Approved."
+msgstr ""
+"أُعيدت الخصومات الشهرية لـ %s إلى مسودة: عادت الملاحظة إلى تم الإجراء."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Most Common Violation"
+msgstr "المخالفة الأكثر تكراراً"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Most Mistakes - Top 15"
+msgstr "الأكثر أخطاء - أعلى 15"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Most common mistake: %(t)s - %(n)s times (%(s)s%% of violations)."
+msgstr "المخالفة الأكثر تكراراً: %(t)s - %(n)s مرة (%(s)s%% من الملاحظات)."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "موعد نشاطي النهائي"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "My Submissions"
+msgstr "ما أرسلته"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__name_label
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__name
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__file_employee_name
+msgid "Name in File"
+msgstr "الاسم في الملف"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Need Attention"
+msgstr "تحتاج مراجعة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Needs Attention"
+msgstr "تحتاج مراجعة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__needs_response
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__requires_response
+msgid "Needs Customer Response"
+msgstr "تحتاج رداً على العميل"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_employee_line_view_list_inherit_mm_violation
+msgid "Net"
+msgstr "الصافي"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_employee_line__net_commission_amount
+msgid "Net Commission"
+msgstr "صافي العمولة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_result__total_net_commission
+msgid "Net Commission (after violations)"
+msgstr "صافي العمولة (بعد الملاحظات)"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "Never"
+msgstr "أبداً"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__spotless
+msgid "Never Any Mistake"
+msgstr "سجل نظيف تماماً"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__state__draft
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_branch__trend__new
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_employee__trend__new
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "New"
+msgstr "جديدة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_performance_scorecard_employee__spotless
+msgid "No approved violation ever, up to the end of the period."
+msgstr "لا توجد أي ملاحظة معتمدة حتى نهاية الفترة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "No approved violations in %s."
+msgstr "لا توجد ملاحظات معتمدة في %s."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "No branch stands out"
+msgstr "لا يوجد فرع بارز"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "No customer complaints in this period."
+msgstr "لا توجد شكاوى عملاء في هذه الفترة."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "No employee had a mistake in this period."
+msgstr "لا يوجد موظف لديه أخطاء في هذه الفترة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "No employee number in the file."
+msgstr "لا يوجد رقم وظيفي في الملف."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "No employee reached the critical level (30%+ deduction)."
+msgstr "لم يصل أي موظف إلى المستوى الحرج (خصم 30% أو أكثر)."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid ""
+"No employee rows found. The sheet needs a header row with an employee number"
+" column (e.g. “الرقم الوظيفي”) and an employee name column (e.g. “اسم "
+"الموظف”)."
+msgstr ""
+"لم يتم العثور على موظفين. يجب أن تحتوي الورقة على صف عناوين فيه عمود للرقم "
+"الوظيفي (مثل “الرقم الوظيفي”) وعمود لاسم الموظف (مثل “اسم الموظف”)."
+
+#. module: mm_branch_violation
+#: model_terms:ir.actions.act_window,help:mm_branch_violation.mm_branch_violation_action_complaints
+msgid "No open customer complaints"
+msgstr "لا توجد شكاوى عملاء مفتوحة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "No target"
+msgstr "بدون هدف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "No violations in the previous period to compare with."
+msgstr "لا توجد ملاحظات في الفترة السابقة للمقارنة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "No violations match the selected filters."
+msgstr "لا توجد ملاحظات مطابقة لعوامل التصفية المختارة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "None"
+msgstr "لا يوجد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__mm_deduction_status__none
+msgid "Not Counted"
+msgstr "غير محتسبة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import_line__match_status__unmatched
+msgid "Not Found"
+msgstr "غير موجود"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_11
+msgid "Not completing the required daily tasks on Remotely"
+msgstr "عدم تنفيذ المهام اليومية المطلوبة على Remotely"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_20
+msgid ""
+"Not cooperating with the team or leaving tasks to colleagues without reason"
+msgstr "عدم التعاون مع فريق العمل أو ترك المهام للموظفين الآخرين دون مبرر"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_10
+msgid "Not following approved prices and offers"
+msgstr "عدم الإلتزام بالأسعار والعروض المعتمدة"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_19
+msgid "Not following correct storage or first-in-first-out product rotation"
+msgstr "عدم الإلتزام بطريقة التخزين الصحيحة أو تدوير المنتجات حسب الأقدم"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_03
+msgid ""
+"Not following food safety requirements (mask, gloves, branch rules, head "
+"cover, shoes)"
+msgstr ""
+"عدم الإلتزام باشتراطات أمن وسلامة الغذاء (الكمامة - القفازات - أحكام الفرع -"
+" غطاء الرأس - الحذاء)"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_15
+msgid ""
+"Not following roasting standards (recommended roasting quantities) and "
+"roasting quality"
+msgstr ""
+"عدم الإلتزام بمعايير التحميص (الكميات الموصى بها في التحميص)، وجودة التحميص"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_12
+msgid "Not following the direct supervisor's instructions"
+msgstr "عدم الإلتزام بتعليمات المسؤول المباشر"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_02
+msgid "Not following the uniform and general appearance rules"
+msgstr "عدم الإلتزام بالزي الرسمي والمظهر العام"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_22
+msgid "Not helping fellow roasters in the showroom during work"
+msgstr "عدم مساعدة المحمصين من زملائهم في المعرض أثناء العمل"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_06
+msgid "Not keeping the showroom and work area clean"
+msgstr "عدم الإلتزام بنظافة المعرض ومنطقة العمل"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_09
+msgid "Not reporting shortages or out-of-stock items"
+msgstr "عدم الإبلاغ عن النواقص أو نفاد الأصناف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__note_type
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__note_type
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Note Type"
+msgstr "نوع الملاحظة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__notes
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__11
+msgid "November"
+msgstr "نوفمبر"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Number already belongs to %s."
+msgstr "الرقم مستخدم بالفعل للموظف %s."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_needaction_counter
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_has_error_counter
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__message_needaction_counter
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_period__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "عدد الرسائل التي تتطلب إجراء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__message_has_error_counter
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_period__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__10
+msgid "October"
+msgstr "أكتوبر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__employee_id
+msgid "Odoo Employee"
+msgstr "الموظف في أودو"
+
+#. module: mm_branch_violation
+#: model:res.groups,name:mm_branch_violation.group_violation_officer
+msgid "Officer"
+msgstr "موظف إدخال"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__on_time_pct
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "On Time %"
+msgstr "نسبة الالتزام بالوقت %"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only Customer Service can update the customer response."
+msgstr "خدمة العملاء فقط يمكنها تحديث الرد على العميل."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only New violations can be deleted. Cancel the others instead."
+msgstr "يمكن حذف الملاحظات الجديدة فقط. قم بإلغاء غيرها بدلاً من ذلك."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"Only New violations can be edited. Once submitted, only a Violation Manager "
+"can change them."
+msgstr ""
+"يمكن تعديل الملاحظات الجديدة فقط. بعد إرسالها، يستطيع مدير الملاحظات فقط "
+"تعديلها."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only New violations can be submitted."
+msgstr "يمكن إرسال الملاحظات الجديدة فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only Resolved or Unresolved complaints can be reopened."
+msgstr "يمكن إعادة فتح الشكاوى المحلولة أو غير المحلولة فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only Violation Officers can submit violations."
+msgstr "يمكن لموظفي إدخال الملاحظات فقط إرسالها."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only a Violation Manager can approve violations."
+msgstr "يمكن لمدير الملاحظات فقط اعتماد الملاحظات."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only a Violation Manager can cancel violations."
+msgstr "يمكن لمدير الملاحظات فقط إلغاء الملاحظات."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"Only a Violation Manager can change the deduction points of a violation."
+msgstr "يمكن لمدير الملاحظات فقط تغيير نقاط الخصم."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only a Violation Manager can delete violations."
+msgstr "يمكن لمدير الملاحظات فقط حذف الملاحظات."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Only a Violation Manager can do this."
+msgstr "هذا الإجراء لمدير الملاحظات فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Only a Violation Manager can import employee numbers."
+msgstr "يمكن لمدير الملاحظات فقط استيراد الأرقام الوظيفية."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only a Violation Manager can reset violations to New."
+msgstr "يمكن لمدير الملاحظات فقط إعادة الملاحظات إلى جديدة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid "Only an Approved or Transferred distribution can be exported for Jisr."
+msgstr "يمكن تصدير التوزيع المعتمد أو المحوّل فقط إلى جسر."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only complaints Awaiting Response can be marked as contacted."
+msgstr "يمكن تحديد \"تم التواصل\" للشكاوى التي بانتظار الرد فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only customer complaints have a customer response."
+msgstr "الرد على العميل متاح لشكاوى العملاء فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only violations Under Review can be approved."
+msgstr "يمكن اعتماد الملاحظات تحت المراجعة فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Only violations Under Review or Cancelled can be reset to New."
+msgstr "يمكن إعادة الملاحظات تحت المراجعة أو الملغاة فقط إلى جديدة."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__complaints_open
+msgid "Open"
+msgstr "مفتوحة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Open Complaints"
+msgstr "الشكاوى المفتوحة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__note_type__operational
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__note_type__operational
+msgid "Operational"
+msgstr "تشغيلية"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__entering_department__operations
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__entering_department__operations
+msgid "Operations"
+msgstr "التشغيل"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Optional - leave empty to detect"
+msgstr "اختياري - اتركه فارغاً للاكتشاف التلقائي"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_report_wizard_view_form
+msgid "Options"
+msgstr "الخيارات"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Others"
+msgstr "أخرى"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_overdue
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Overdue"
+msgstr "متأخرة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__overdue
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Overdue Now"
+msgstr "متأخرة حالياً"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Overdue: customer not contacted (%s)"
+msgstr "متأخرة: لم يتم التواصل مع العميل (%s)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__language
+msgid "PDF Language"
+msgstr "لغة ملف PDF"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_pos_commission_employee_line
+msgid "POS Commission - Employee Distribution Line"
+msgstr "عمولة نقاط البيع - سطر توزيع الموظف"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_pos_commission_plan
+msgid "POS Commission Plan"
+msgstr "خطة عمولة نقاط البيع"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_pos_commission_result
+msgid "POS Commission Result"
+msgstr "نتيجة عمولة نقاط البيع"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_pos_sales_target
+msgid "POS Sales Target"
+msgstr "مستهدف مبيعات نقاط البيع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__status_filter__pending
+msgid "Pending Approval (New + Under Review)"
+msgstr "بانتظار الاعتماد (جديدة + تحت المراجعة)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__mm_deduction_status__pending
+msgid "Pending Deduction"
+msgstr "بانتظار الخصم"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Pending Deductions"
+msgstr "بانتظار الخصم"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_type__points
+msgid ""
+"Percentage deducted from the employee's commission for each approved "
+"violation of this type. Proposed on every new violation; only a Violation "
+"Manager can override it there."
+msgstr ""
+"النسبة المخصومة من عمولة الموظف عن كل ملاحظة معتمدة من هذا النوع. تُقترح "
+"تلقائياً في كل ملاحظة جديدة؛ ويستطيع مدير الملاحظات فقط تعديلها."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+#: model:ir.actions.server,name:mm_branch_violation.mm_performance_scorecard_action
+#: model:ir.model,name:mm_branch_violation.model_mm_performance_scorecard
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid "Performance Scorecard"
+msgstr "بطاقة الأداء"
+
+#. module: mm_branch_violation
+#: model:ir.actions.report,name:mm_branch_violation.action_report_mm_performance_scorecard
+msgid "Performance Scorecard (PDF)"
+msgstr "بطاقة الأداء (PDF)"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_performance_scorecard_branch
+msgid "Performance Scorecard - Branch"
+msgstr "بطاقة الأداء - فرع"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_performance_scorecard_service
+msgid "Performance Scorecard - Customer Service"
+msgstr "بطاقة الأداء - خدمة العملاء"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_performance_scorecard_employee
+msgid "Performance Scorecard - Employee"
+msgstr "بطاقة الأداء - موظف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__period
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__period_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__period
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_report_wizard_view_form
+msgid "Period"
+msgstr "الفترة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.actions.act_window,help:mm_branch_violation.mm_violation_deduction_period_action
+msgid ""
+"Pick a month: every employee with approved violations in it gets one line\n"
+"               with the total deduction %. Export it for Jisr, then Confirm the month so\n"
+"               those violations are never deducted again."
+msgstr ""
+"اختر شهراً: كل موظف لديه ملاحظات معتمدة فيه يظهر في سطر واحد\n"
+"               بإجمالي نسبة الخصم. صدّره إلى جسر، ثم أكّد الشهر حتى\n"
+"               لا تُخصم هذه الملاحظات مرة أخرى."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid ""
+"Pick the right employee for rows that are Not Found or Ambiguous,\n"
+"                        or tick Skip. Rows with an issue are not imported."
+msgstr ""
+"اختر الموظف الصحيح للصفوف غير الموجودة أو غير المحددة،\n"
+"                        أو حدد تخطي. الصفوف التي بها مشكلة لن يتم استيرادها."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__points
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__points
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Points"
+msgstr "النقاط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__points_per_employee
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Points / Employee"
+msgstr "النقاط / موظف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Points by Branch"
+msgstr "النقاط حسب الفرع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Points per Violation"
+msgstr "نقاط المخالفة"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_07
+msgid "Poor product arrangement or display, or gaps on shelves and bins"
+msgstr "سوء ترتيب وعرض المنتجات أو وجود فراغات بالرفوف والعيون"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__candidate_ids
+msgid "Possible Employees"
+msgstr "الموظفون المحتملون"
+
+#. module: mm_branch_violation
+#: model_terms:ir.actions.act_window,help:mm_branch_violation.mm_violation_deduction_period_action
+msgid "Prepare a month's deductions for Jisr"
+msgstr "جهّز خصومات الشهر لجسر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__previous_label
+msgid "Previous Label"
+msgstr "الفترة السابقة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Previous period"
+msgstr "الفترة السابقة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_report_wizard_view_form
+msgid "Print PDF"
+msgstr "طباعة PDF"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__points
+msgid ""
+"Proposed from the violation type. Only a Violation Manager can change it."
+msgstr "تُقترح من نوع المخالفة. يستطيع مدير الملاحظات فقط تغييرها."
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_hr_employee_public
+msgid "Public Employee"
+msgstr "الموظف العام"
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_05
+msgid "REMOTELY"
+msgstr ""
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__rank
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__rank
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__rank
+msgid "Rank"
+msgstr "الترتيب"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__rank_delta
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__rank_delta
+msgid "Rank Delta"
+msgstr ""
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Read File"
+msgstr "قراءة الملف"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Ready to Import"
+msgstr "جاهز للاستيراد"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__name
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Reference"
+msgstr "المرجع"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+msgid "Refresh"
+msgstr "تحديث"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Refresh Report"
+msgstr "تحديث التقرير"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_result_view_form_inherit_mm_violation
+msgid "Refresh Violations"
+msgstr "تحديث الملاحظات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Reopen Complaint"
+msgstr "إعادة فتح الشكوى"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__report_file
+msgid "Report File"
+msgstr "ملف التقرير"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__report_filename
+msgid "Report Filename"
+msgstr "اسم ملف التقرير"
+
+#. module: mm_branch_violation
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_branch_violation_reporting
+msgid "Reporting"
+msgstr "التقارير"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Reset the later confirmed month(s) first: %s"
+msgstr "أعد الشهر/الأشهر المؤكدة اللاحقة إلى مسودة أولاً: %s"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+msgid "Reset to Draft"
+msgstr "إعادة إلى مسودة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Reset to Draft: %s violations released."
+msgstr "أُعيد إلى مسودة: تم تحرير %s ملاحظة."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+msgid "Reset to Draft? The month's violations go back to Approved."
+msgstr "إعادة إلى مسودة؟ ستعود ملاحظات الشهر إلى حالة تم الإجراء."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Reset to New"
+msgstr "إعادة إلى جديدة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__complaints_resolved
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__resolved
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__response_state__resolved
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Resolved"
+msgstr "تم الحل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__resolved_pct
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__resolved_pct
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Resolved %"
+msgstr "نسبة الحل %"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_performance_scorecard_service__resolved_pct
+msgid "Resolved / (resolved + unresolved)."
+msgstr "المحلولة / (المحلولة + غير المحلولة)."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_deadline
+msgid "Response Deadline"
+msgstr "مهلة الرد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_overdue_notified
+msgid "Response Overdue Notified"
+msgstr "تم التنبيه بتأخر الرد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__response_state
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Response Status"
+msgstr "حالة الرد"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Response deadline passed: the customer has not been contacted yet."
+msgstr "انتهت مهلة الرد: لم يتم التواصل مع العميل بعد."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__activity_user_id
+msgid "Responsible User"
+msgstr "المستخدم المسؤول"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__result_message
+msgid "Result Message"
+msgstr "النتيجة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import__state__review
+msgid "Review"
+msgstr "المراجعة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Review violation %s"
+msgstr "مراجعة الملاحظة %s"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Risk Level"
+msgstr "مستوى الخطورة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__row_number
+msgid "Row"
+msgstr "الصف"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Row %(row)s (%(name)s): %(issue)s"
+msgstr "الصف %(row)s (%(name)s): %(issue)s"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Rows Needing Attention (xlsx)"
+msgstr "الصفوف التي تحتاج مراجعة (xlsx)"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Rows not imported (need attention or skipped): %s"
+msgstr "الصفوف غير المستوردة (تحتاج مراجعة أو تم تخطيها): %s"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__message_has_sms_error
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.res_config_settings_view_form_mm_violation
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__sales_achieved
+msgid "Sales Achieved"
+msgstr "المبيعات المحققة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__sales_score
+msgid "Sales Score"
+msgstr "نتيجة المبيعات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__sales_target
+msgid "Sales Target"
+msgstr "هدف المبيعات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_branch__trend__same
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_employee__trend__same
+msgid "Same"
+msgstr "ثابت"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Same number of violations as the previous period (%s)."
+msgstr "نفس عدد الملاحظات في الفترة السابقة (%s)."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__score
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__score
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Score"
+msgstr "النتيجة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "Score %(score)s · %(count)s violations each"
+msgstr "النتيجة %(score)s · %(count)s ملاحظات لكل فرع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "Score %(score)s · no sales target · %(count)s violations"
+msgstr "النتيجة %(score)s · بدون هدف مبيعات · %(count)s ملاحظات"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "Score %(score)s · sales %(sales)s · %(count)s violations"
+msgstr "النتيجة %(score)s · المبيعات %(sales)s · %(count)s ملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__scorecard_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__scorecard_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__scorecard_id
+msgid "Scorecard"
+msgstr "بطاقة الأداء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_deduction_period__month__9
+msgid "September"
+msgstr "سبتمبر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_source__sequence
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_type__sequence
+msgid "Sequence"
+msgstr "التسلسل"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__service_line_ids
+msgid "Service Line"
+msgstr "سطر خدمة العملاء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_pos_commission_employee_line__mm_deduction_locked
+msgid ""
+"Set when the distribution is approved: the violation figures no longer "
+"change."
+msgstr "يُفعّل عند اعتماد التوزيع: لا تتغير أرقام الملاحظات بعد ذلك."
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_violation_settings_action
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_violation_settings
+msgid "Settings"
+msgstr "الإعدادات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Share"
+msgstr "النسبة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Share %"
+msgstr "النسبة %"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Share of Mistakes"
+msgstr "توزيع المخالفات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Share of Points"
+msgstr "نسبة النقاط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_res_company__mm_score_weight_sales
+#: model:ir.model.fields,help:mm_branch_violation.field_res_config_settings__mm_score_weight_sales
+msgid ""
+"Share of the branch score that comes from its sales target achievement. "
+"Sales + Mistakes must equal 100."
+msgstr ""
+"حصة نتيجة الفرع المأخوذة من تحقيق هدف المبيعات. يجب أن يكون مجموع المبيعات "
+"والأخطاء 100."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_res_company__mm_score_weight_mistakes
+#: model:ir.model.fields,help:mm_branch_violation.field_res_config_settings__mm_score_weight_mistakes
+msgid ""
+"Share of the branch score that comes from its violations (customer "
+"complaints included). Sales + Mistakes must equal 100."
+msgstr ""
+"حصة نتيجة الفرع المأخوذة من الملاحظات (تشمل شكاوى العملاء). يجب أن يكون "
+"مجموع المبيعات والأخطاء 100."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Sheet"
+msgstr "الورقة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__sheet_name
+msgid "Sheet Name"
+msgstr "اسم الورقة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import_line__skip
+msgid "Skip"
+msgstr "تخطي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import_line__match_status__skipped
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Skipped"
+msgstr "تم التخطي"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__skipped_count
+msgid "Skipped Count"
+msgstr "عدد المتخطى"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__source_id
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Source"
+msgstr "مصدر الملاحظة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__source_ids
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_violation_source
+msgid "Sources"
+msgstr "مصادر الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_plan__mm_auto_split
+msgid "Split Automatically Among Branch Employees"
+msgstr "التوزيع تلقائياً على موظفي الفرع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__state
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__state
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__state
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__status_filter
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Status"
+msgstr "الحالة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة بناءً على الأنشطة\n"
+"متأخرة: تجاوز تاريخ الاستحقاق\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"مخطط لها: أنشطة مستقبلية."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__open_count
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Still Open"
+msgstr "ما زالت مفتوحة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "Submit for Review"
+msgstr "إرسال للمراجعة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__submitted_by_id
+msgid "Submitted By"
+msgstr "أرسلها"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__submitted_date
+msgid "Submitted Date"
+msgstr "تاريخ الإرسال"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_pos_commission_employee_line__deduction_percent
+msgid "Sum of the counted violations' points, capped at 100%."
+msgstr "مجموع نقاط الملاحظات المحتسبة، بحد أقصى 100%."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Summary"
+msgstr "الملخص"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__summary_html
+msgid "Summary Html"
+msgstr "الملخص"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__sales_label
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Target Achieved"
+msgstr "تحقيق الهدف"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__sales_rate
+msgid "Target Achieved %"
+msgstr "نسبة تحقيق الهدف %"
+
+#. module: mm_branch_violation
+#: model:ir.model.constraint,message:mm_branch_violation.constraint_res_company_mm_score_weights_total
+msgid "The branch score weights (Sales + Mistakes) must add up to 100."
+msgstr "يجب أن يكون مجموع أوزان نتيجة الفرع (المبيعات + الأخطاء) 100."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__mm_commission_line_id
+msgid "The commission line whose approval closed this violation."
+msgstr "سطر العمولة الذي أُغلقت هذه الملاحظة عند اعتماده."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__mm_deduction_period_id
+msgid ""
+"The confirmed monthly deductions (for Jisr) that closed this violation."
+msgstr "الخصومات الشهرية المؤكدة (لجسر) التي أغلقت هذه الملاحظة."
+
+#. module: mm_branch_violation
+#: model:ir.model.constraint,message:mm_branch_violation.constraint_res_company_mm_response_deadline_hours_positive
+msgid "The customer response deadline must be at least 1 hour."
+msgstr "يجب ألا تقل مهلة الرد على العميل عن ساعة واحدة."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__response_late
+msgid "The customer was contacted after the deadline."
+msgstr "تم التواصل مع العميل بعد انتهاء المهلة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid "The distribution is approved: its violation deductions are locked."
+msgstr "التوزيع معتمد: خصومات الملاحظات مقفلة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "The file has no sheet named “%s”."
+msgstr "لا يحتوي الملف على ورقة باسم “%s”."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "The openpyxl Python library is not installed."
+msgstr "مكتبة openpyxl غير مثبتة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "The same employee is chosen on another row."
+msgstr "نفس الموظف مختار في صف آخر."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "The same employee number appears on another row."
+msgstr "نفس الرقم الوظيفي موجود في صف آخر."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "The start date must be before the end date."
+msgstr "يجب أن يكون تاريخ البداية قبل تاريخ النهاية."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid ""
+"The status and approval fields can only be changed with the workflow "
+"buttons."
+msgstr "لا يمكن تغيير الحالة وحقول الاعتماد إلا من خلال أزرار سير العمل."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "The xlsxwriter Python library is not installed."
+msgstr "مكتبة xlsxwriter غير مثبتة."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "There are no matched rows to apply."
+msgstr "لا توجد صفوف مطابقة للتطبيق."
+
+#. module: mm_branch_violation
+#: model:ir.model.constraint,message:mm_branch_violation.constraint_mm_violation_deduction_period_month_company_uniq
+msgid "There is already a deduction record for this month."
+msgstr "يوجد سجل خصومات لهذا الشهر بالفعل."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid ""
+"These employees have no Employee Number, so Jisr cannot match them. Fill it on the employee (or run Import Employee Numbers) first:\n"
+"%s"
+msgstr ""
+"هؤلاء الموظفون ليس لديهم رقم وظيفي، لذا لن يتمكن جسر من مطابقتهم. أدخل الرقم في ملف الموظف (أو استخدم استيراد الأرقام الوظيفية) أولاً:\n"
+"%s"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__period__this_month
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__period__this_month
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "This Month"
+msgstr "هذا الشهر"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__period__this_quarter
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__period__this_quarter
+msgid "This Quarter"
+msgstr "هذا الربع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard__period__this_year
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_violation_report_wizard__period__this_year
+msgid "This Year"
+msgstr "هذه السنة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "This complaint is already closed. Reopen it first."
+msgstr "هذه الشكوى مغلقة. أعد فتحها أولاً."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+msgid "This distribution has no employee lines."
+msgstr "لا يحتوي هذا التوزيع على أسطر موظفين."
+
+#. module: mm_branch_violation
+#: model:ir.model.constraint,message:mm_branch_violation.constraint_hr_employee_mm_employee_number_company_uniq
+msgid ""
+"This employee number is already used by another employee of the same "
+"company."
+msgstr "هذا الرقم الوظيفي مستخدم لموظف آخر في نفس الشركة."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "Tied with"
+msgstr "متعادل مع"
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_branch_violation_action_to_approve
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_branch_violation_to_approve
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "To Approve"
+msgstr "بانتظار الاعتماد"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Top 5 Branches"
+msgstr "أعلى 5 فروع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Top 5 Employees at Risk"
+msgstr "أعلى 5 موظفين خطورة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Top 5 Mistakes"
+msgstr "أكثر 5 مخالفات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Top Violations"
+msgstr "أكثر المخالفات"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Total"
+msgstr "الإجمالي"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_employee_line.py:0
+msgid "Total %(total)s%% capped at 100%%."
+msgstr "الإجمالي %(total)s%% بحد أقصى 100%%."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_result_view_form_inherit_mm_violation
+msgid "Total Deductions"
+msgstr "إجمالي الخصومات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_result_view_form_inherit_mm_violation
+msgid "Total Net"
+msgstr "إجمالي الصافي"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__total_points
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_list
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Total Points"
+msgstr "إجمالي النقاط"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_line__deduction_percent
+msgid ""
+"Total points of the employee's violations in the month, capped at 100%."
+msgstr "إجمالي نقاط ملاحظات الموظف في الشهر، بحد أقصى 100%."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__trend
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__trend
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Trend"
+msgstr "الاتجاه"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع النشاط الاستثنائي في السجل."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "Unassigned"
+msgstr "غير مسندة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Undefined"
+msgstr "غير محدد"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__state__under_review
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Under Review"
+msgstr "تحت المراجعة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_service__unresolved
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_branch_violation__response_state__unresolved
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+msgid "Unresolved"
+msgstr "لم تحل"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "Unsupported search on Overdue."
+msgstr "بحث غير مدعوم على حقل متأخرة."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_branch__trend__up
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_performance_scorecard_employee__trend__up
+msgid "Up"
+msgstr "تقدم"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_performance_scorecard_view_form
+msgid "Update"
+msgstr "تحديث"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields.selection,name:mm_branch_violation.selection__mm_employee_number_import__state__upload
+msgid "Upload"
+msgstr "رفع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_employee_number_import.py:0
+msgid "Upload an Excel file first."
+msgstr "ارفع ملف Excel أولاً."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid ""
+"Upload the Jisr export (.xlsx). It needs an employee number column\n"
+"                        (e.g. “الرقم الوظيفي”) and an employee name column (e.g. “اسم الموظف”).\n"
+"                        Job title and branch columns are optional."
+msgstr ""
+"ارفع ملف التصدير من جسر (.xlsx). يجب أن يحتوي على عمود الرقم الوظيفي\n"
+"                        (مثل “الرقم الوظيفي”) وعمود اسم الموظف (مثل “اسم الموظف”).\n"
+"                        عمودا المسمى الوظيفي والفرع اختياريان."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_employee_number_import__used_sheet
+msgid "Used Sheet"
+msgstr "الورقة المستخدمة"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__employee_user_id
+msgid "User"
+msgstr "المستخدم"
+
+#. module: mm_branch_violation
+#: model:mm.violation.type,name:mm_branch_violation.violation_type_05
+msgid "Using a mobile phone or headphones during working hours"
+msgstr "استخدام الجوال أو وضع السماعات في أوقات العمل"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_employee_line_view_form_inherit_mm_violation
+msgid "View Counted Violations"
+msgstr "عرض الملاحظات المحتسبة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_result_view_form_inherit_mm_violation
+msgid "View counted violations"
+msgstr "عرض الملاحظات المحتسبة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+msgid "View violations"
+msgstr "عرض الملاحظات"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__violation_type_id
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_cancel_wizard__violation_ids
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_search
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Violation"
+msgstr "المخالفة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_result.py:0
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_employee_line__deduction_percent
+msgid "Violation %"
+msgstr "نسبة الملاحظات %"
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_branch_violation_action_analysis
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_graph
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_pivot
+msgid "Violation Analysis"
+msgstr "تحليل الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__violation_count
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__violation_count
+msgid "Violation Count"
+msgstr "عدد الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_employee_line__deduction_amount
+msgid "Violation Deduction"
+msgstr "خصم الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_result__total_violation_deduction
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.pos_commission_employee_line_view_form_inherit_mm_violation
+msgid "Violation Deductions"
+msgstr "خصومات الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_employee_line__mm_violation_note
+msgid "Violation Details"
+msgstr "تفاصيل الملاحظات"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Violation List"
+msgstr "قائمة الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_hr_employee__mm_violation_points
+msgid "Violation Points This Month"
+msgstr "نقاط الخصم هذا الشهر"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_violation_source
+msgid "Violation Source"
+msgstr "مصدر الملاحظة"
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_violation_source_action
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_source_view_list
+msgid "Violation Sources"
+msgstr "مصادر الملاحظات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_list_complaints
+msgid "Violation Status"
+msgstr "حالة الملاحظة"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_violation_type
+msgid "Violation Type"
+msgstr "نوع المخالفة"
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_violation_type_action
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_violation_type
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_type_view_list
+msgid "Violation Types"
+msgstr "أنواع المخالفات"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_branch_violation_action
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__violations
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__violations
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_line__violation_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_report_wizard__violation_type_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_pos_commission_employee_line__mm_violation_count
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_list
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Violations"
+msgstr "الملاحظات"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/hr_employee.py:0
+#: code:addons/mm_branch_violation/models/mm_violation_deduction_period.py:0
+msgid "Violations - %s"
+msgstr "الملاحظات - %s"
+
+#. module: mm_branch_violation
+#: model:ir.actions.act_window,name:mm_branch_violation.mm_violation_report_wizard_action
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_violation_report
+msgid "Violations Report"
+msgstr "تقرير الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_hr_employee__mm_violation_count
+msgid "Violations This Month"
+msgstr "الملاحظات هذا الشهر"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "Violations by Branch"
+msgstr "الملاحظات حسب الفرع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Violations by Source"
+msgstr "الملاحظات حسب المصدر"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Violations by Source and Note Type"
+msgstr "الملاحظات حسب المصدر ونوع الملاحظة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Violations by Type"
+msgstr "الملاحظات حسب نوع المخالفة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_employee_line.py:0
+msgid "Violations counted - %s"
+msgstr "الملاحظات المحتسبة - %s"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_source__requires_response
+msgid ""
+"Violations from this source come from a customer (call, Google, social "
+"media...): Customer Service must contact the customer back before the "
+"response deadline."
+msgstr ""
+"الملاحظات من هذا المصدر تأتي من عميل (مكالمة، جوجل، وسائل التواصل...): يجب "
+"على خدمة العملاء التواصل مع العميل قبل انتهاء مهلة الرد."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Violations per Month"
+msgstr "الملاحظات شهرياً"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid ""
+"Violations went DOWN %(c).0f%% compared with the previous period (%(a)s → "
+"%(b)s)."
+msgstr ""
+"انخفضت الملاحظات بنسبة %(c).0f%% مقارنة بالفترة السابقة (%(a)s ← %(b)s)."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid ""
+"Violations went UP %(c).0f%% compared with the previous period (%(a)s → "
+"%(b)s)."
+msgstr ""
+"ارتفعت الملاحظات بنسبة %(c).0f%% مقارنة بالفترة السابقة (%(a)s ← %(b)s)."
+
+#. module: mm_branch_violation
+#: model:mm.violation.source,name:mm_branch_violation.violation_source_08
+msgid "WHATSAPP"
+msgstr ""
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "Warning"
+msgstr "تحذير"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_branch_violation__website_message_ids
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__website_message_ids
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_violation_deduction_period__website_message_ids
+msgid "Website communication history"
+msgstr "سجل تواصل الموقع"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__weight_mistakes
+msgid "Weight Mistakes"
+msgstr "وزن الأخطاء"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard__weight_sales
+msgid "Weight Sales"
+msgstr "وزن المبيعات"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid "What happened? Reason and details of the violation..."
+msgstr "ماذا حدث؟ سبب وتفاصيل الملاحظة..."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__response_action
+msgid "What was said / done for the customer."
+msgstr "ما قيل أو ما تم للعميل."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_branch_violation_view_form
+msgid ""
+"What was said or done for the customer (apology, refund, voucher, remake...)"
+msgstr "ما قيل أو ما تم للعميل (اعتذار، استرجاع، قسيمة، إعادة تحضير...)"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_pos_commission_plan__mm_auto_split
+msgid ""
+"When the branch commission is calculated or refreshed, add the branch's "
+"employees and split it with the Distribution Method below (violation "
+"deductions included), until the split is submitted for review. Note: a "
+"target whose split has employees can only be approved after its split is "
+"approved."
+msgstr ""
+"عند احتساب عمولة الفرع أو تحديثها، يُضاف موظفو الفرع وتُوزّع العمولة عليهم "
+"حسب طريقة التوزيع أدناه (مع خصم الملاحظات)، إلى أن يُرسل التوزيع للمراجعة. "
+"ملاحظة: المستهدف الذي يحتوي توزيعه على موظفين لا يمكن اعتماده إلا بعد اعتماد"
+" التوزيع."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__complaint_received_at
+msgid "When the customer complained. The response deadline counts from here."
+msgstr "وقت شكوى العميل. تحسب مهلة الرد من هذا الوقت."
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,help:mm_branch_violation.field_mm_branch_violation__response_closed_by_id
+msgid "Who marked the complaint Resolved or Unresolved."
+msgstr "من حدد الشكوى كمحلولة أو غير محلولة."
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_cancel_wizard_view_form
+msgid "Why is this violation being cancelled?"
+msgstr "لماذا يتم إلغاء هذه الملاحظة؟"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__clean_label
+msgid "Without Mistake"
+msgstr "بدون أخطاء"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_employee_number_import_view_form
+msgid "Write the employee numbers of the rows that are ready?"
+msgstr "هل تريد كتابة الأرقام الوظيفية للصفوف الجاهزة؟"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_violation_deduction_period__year
+msgid "Year"
+msgstr "السنة"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "You can only edit the violations you created."
+msgstr "يمكنك تعديل الملاحظات التي أنشأتها فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_branch_violation.py:0
+msgid "You can only submit the violations you created."
+msgstr "يمكنك إرسال الملاحظات التي أنشأتها فقط."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/pos_commission_employee_line.py:0
+msgid "[branch: %s]"
+msgstr "[الفرع: %s]"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "customer complaints"
+msgstr "شكاوى عملاء"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.mm_violation_deduction_period_view_form
+msgid ""
+"employee(s) have no\n"
+"                        Employee Number. Jisr cannot match them: fill the number on the employee\n"
+"                        or use Configuration → Import Employee Numbers."
+msgstr ""
+"موظف/موظفين بدون\n"
+"                        رقم وظيفي. لن يتمكن جسر من مطابقتهم: أدخل الرقم في ملف الموظف\n"
+"                        أو استخدم الإعدادات ← استيراد الأرقام الوظيفية."
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_performance_scorecard.py:0
+msgid "never had a mistake"
+msgstr "لم يرتكب أي خطأ"
+
+#. module: mm_branch_violation
+#: model:ir.actions.report,print_report_name:mm_branch_violation.action_report_mm_violation
+msgid "object._mm_file_name('pdf')"
+msgstr ""
+
+#. module: mm_branch_violation
+#: model:ir.actions.report,print_report_name:mm_branch_violation.action_report_mm_performance_scorecard
+msgid "object._mm_file_name()"
+msgstr ""
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "others"
+msgstr "آخرين"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "violations ·"
+msgstr "ملاحظات ·"
+
+#. module: mm_branch_violation
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_branch__rank_change
+#: model:ir.model.fields,field_description:mm_branch_violation.field_mm_performance_scorecard_employee__rank_change
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_performance_scorecard
+msgid "vs Previous"
+msgstr "مقارنة بالسابق"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "vs previous period"
+msgstr "مقارنة بالفترة السابقة"
+
+#. module: mm_branch_violation
+#: model_terms:ir.ui.view,arch_db:mm_branch_violation.report_mm_violation
+msgid "▲ / ▼ = change vs the previous period ("
+msgstr "▲ / ▼ = التغير مقارنة بالفترة السابقة ("
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "▲ = more violations (worse), ▼ = fewer (better)"
+msgstr "▲ = ملاحظات أكثر (أسوأ)، ▼ = أقل (أفضل)"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/wizard/mm_violation_report_wizard.py:0
+msgid "▲ New"
+msgstr "▲ جديد"
+
+#. module: mm_branch_violation
+#: model:ir.ui.menu,name:mm_branch_violation.menu_mm_violation_dashboard
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+#. module: mm_branch_violation
+#: model:ir.actions.client,name:mm_branch_violation.mm_violation_dashboard_action
+msgid "Violations Dashboard"
+msgstr "لوحة الملاحظات"
+
+#. module: mm_branch_violation
+#: model:ir.model,name:mm_branch_violation.model_mm_violation_dashboard
+msgid "Branch Violations Dashboard"
+msgstr "لوحة ملاحظات الفروع"
+
+#. module: mm_branch_violation
+#. odoo-python
+#: code:addons/mm_branch_violation/models/mm_violation_dashboard.py:0
+msgid "Only Violation Managers can open the violations dashboard."
+msgstr "لوحة الملاحظات متاحة لمديري الملاحظات فقط."

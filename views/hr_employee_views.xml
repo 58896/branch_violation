@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_employee_view_form_inherit_mm_violation" model="ir.ui.view">
+        <field name="name">hr.employee.form.mm.violation</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_mm_violations" type="object" class="oe_stat_button"
+                        icon="fa-exclamation-triangle"
+                        groups="mm_branch_violation.group_violation_officer">
+                    <div class="o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="mm_violation_count" nolabel="1"/>
+                            <span> / </span>
+                            <field name="mm_violation_points" nolabel="1"/>%
+                        </span>
+                        <span class="o_stat_text">Violations (Month)</span>
+                    </div>
+                </button>
+            </div>
+            <xpath expr="//group/field[@name='job_id']" position="after">
+                <field name="mm_employee_number"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_employee_view_tree_inherit_mm_violation" model="ir.ui.view">
+        <field name="name">hr.employee.list.mm.violation</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="mm_employee_number" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_employee_view_search_inherit_mm_violation" model="ir.ui.view">
+        <field name="name">hr.employee.search.mm.violation</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="mm_employee_number"/>
+            </field>
+        </field>
+    </record>
+</odoo>
