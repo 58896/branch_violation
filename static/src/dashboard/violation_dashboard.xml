@@ -66,9 +66,12 @@
               </div>
               <div class="mm-v-custom">
                 <div class="mm-v-lbl" t-esc="t('custom')"/>
-                <label><span t-esc="t('from')"/><input type="date" t-model="state.customFrom"/></label>
-                <label><span t-esc="t('to')"/><input type="date" t-model="state.customTo"/></label>
-                <button class="mm-v-btn mm-v-btn-primary" t-on-click="applyCustom" t-esc="t('apply')"/>
+                <div class="mm-v-range">
+                  <label><span t-esc="t('from')"/><input type="date" t-model="state.customFrom"/></label>
+                  <span class="mm-v-range-arrow">→</span>
+                  <label><span t-esc="t('to')"/><input type="date" t-model="state.customTo"/></label>
+                </div>
+                <button class="mm-v-btn mm-v-btn-primary mm-v-apply" t-on-click="applyCustom" t-esc="t('apply')"/>
               </div>
             </div>
           </t>
@@ -113,13 +116,6 @@
                 </div>
               </div>
             </t>
-          </div>
-          <!-- granularity -->
-          <div class="mm-v-seg mm-v-seg-sm">
-            <div t-att-class="{ 'mm-on': !state.granularity }" t-on-click="() => this.setGranularity(null)" t-esc="t('auto')"/>
-            <div t-att-class="{ 'mm-on': state.granularity === 'day' }" t-on-click="() => this.setGranularity('day')" t-esc="t('day')"/>
-            <div t-att-class="{ 'mm-on': state.granularity === 'week' }" t-on-click="() => this.setGranularity('week')" t-esc="t('week')"/>
-            <div t-att-class="{ 'mm-on': state.granularity === 'month' }" t-on-click="() => this.setGranularity('month')" t-esc="t('month')"/>
           </div>
           <button class="mm-v-btn mm-v-filter-btn" t-att-class="{ 'mm-on': filterCount }" t-on-click="openDrawer">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>
@@ -256,7 +252,16 @@
         <section class="mm-v-card mm-v-pad mm-v-mb">
           <div class="mm-v-card-head">
             <span class="mm-v-card-title" t-esc="t('trend')"/>
-            <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('trend'))"/></t>
+            <div class="mm-v-card-tools">
+              <!-- grouping of this chart only (day / week / month buckets) -->
+              <div class="mm-v-seg mm-v-seg-sm">
+                <div t-att-class="{ 'mm-on': !state.granularity }" t-on-click="() => this.setGranularity(null)" t-esc="t('auto')"/>
+                <div t-att-class="{ 'mm-on': state.granularity === 'day' }" t-on-click="() => this.setGranularity('day')" t-esc="t('day')"/>
+                <div t-att-class="{ 'mm-on': state.granularity === 'week' }" t-on-click="() => this.setGranularity('week')" t-esc="t('week')"/>
+                <div t-att-class="{ 'mm-on': state.granularity === 'month' }" t-on-click="() => this.setGranularity('month')" t-esc="t('month')"/>
+              </div>
+              <t t-call="mm_branch_violation.VdOpen"><t t-set="onOpen" t-value="() => this.openList([], t('trend'))"/></t>
+            </div>
           </div>
           <div t-ref="trend" class="mm-v-chart-lg"/>
         </section>

@@ -384,6 +384,8 @@ export class ViolationDashboard extends Component {
     get opts() { return this.data.options || {}; }
 
     async load(silent = false) {
+        // charts are rebuilt on every load; keep the reader where they were
+        this._keepScroll = this.rootRef.el ? this.rootRef.el.scrollTop : null;
         if (!silent) this.state.loading = true;
         this._saveSession();
         try {
@@ -799,14 +801,17 @@ export class ViolationDashboard extends Component {
         el.style.direction = "ltr";  // ApexCharts breaks under RTL
         const base = {
             chart: { fontFamily: "IBM Plex Sans Arabic, system-ui, sans-serif", toolbar: { show: false },
-                     animations: { enabled: true, speed: 350 }, ...(options.chart || {}) },
+                     animations: { enabled: true, easing: "easeinout", speed: 1000,
+                     animateGradually: { enabled: true, delay: 120 },
+                     dynamicAnimation: { enabled: true, speed: 700 } }, ...(options.chart || {}) },
             grid: { borderColor: C.grid, strokeDashArray: 3 },
             dataLabels: { enabled: false },
             tooltip: { theme: "light" },
         };
         try {
             const c = new window.ApexCharts(el, { ...base, ...options, chart: base.chart });
-            c.render();
+            // drawn: release the height held by renderCharts()
+            Promise.resolve(c.render()).finally(() => { el.style.minHeight = ""; });
             this._charts.push(c);
         } catch (e) {
             console.warn("mm violation dashboard chart", key, e);
@@ -823,6 +828,11 @@ export class ViolationDashboard extends Component {
         });
     }
     renderCharts() {
+        // hold each chart's height while it is rebuilt, so the page does not
+        // shrink for a moment and throw the reader back to the top
+        for (const ref of Object.values(this.refs)) {
+            if (ref.el && ref.el.offsetHeight) ref.el.style.minHeight = `${ref.el.offsetHeight}px`;
+        }
         this.destroyCharts();
         const d = this.state.data;
         if (this.state.loading || !d || !d.trend) return;
@@ -984,6 +994,14 @@ export class ViolationDashboard extends Component {
             plotOptions: { pie: { donut: { size: "60%", labels: { show: true,
                 total: { show: true, label: this.t("complaintsCol"), formatter: () => this.n(k.complaints) } } } } },
         });
+        this._restoreScroll();
+    }
+    _restoreScroll() {
+        const el = this.rootRef.el, y = this._keepScroll;
+        this._keepScroll = null;
+        if (!el || y === null || y === undefined) return;
+        el.scrollTop = y;
+        requestAnimationFrame(() => { el.scrollTop = y; });
     }
     setBreakdown(b) { this.state.breakdown = b; this._saveSession(); }
 }
